@@ -71,14 +71,16 @@ namespace GroupStudyWinApp
 
                             repo.AddNew(user);
                             MessageBox.Show("Create successfully", "Notification");
+
+                            // Open login form
+                            frmLogin f = new frmLogin();
+                            f.Show();
+                            this.Hide();
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Resgister");
                         }
-                        frmLogin f = new frmLogin();
-                        f.Show();
-                        this.Hide();
                     }
                     else
                     {

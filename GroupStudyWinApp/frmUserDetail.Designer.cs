@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnReset = new Button();
+            btnClose = new Button();
             dtpkBirthday = new DateTimePicker();
-            txtConfirmPassword = new TextBox();
-            label6 = new Label();
-            btnRegister = new Button();
+            btnSave = new Button();
             txtAddress = new TextBox();
             txtPassword = new TextBox();
             txtEmail = new TextBox();
@@ -42,60 +40,50 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            label7 = new Label();
+            txtId = new TextBox();
+            lbRole = new Label();
+            cboRole = new ComboBox();
             SuspendLayout();
             // 
-            // btnReset
+            // btnClose
             // 
-            btnReset.Location = new Point(504, 338);
-            btnReset.Name = "btnReset";
-            btnReset.Size = new Size(94, 29);
-            btnReset.TabIndex = 27;
-            btnReset.Text = "Reset";
-            btnReset.UseVisualStyleBackColor = true;
+            btnClose.Location = new Point(504, 358);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(94, 29);
+            btnClose.TabIndex = 27;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // dtpkBirthday
             // 
-            dtpkBirthday.Location = new Point(348, 246);
+            dtpkBirthday.Location = new Point(348, 223);
             dtpkBirthday.Name = "dtpkBirthday";
             dtpkBirthday.Size = new Size(250, 27);
             dtpkBirthday.TabIndex = 23;
             // 
-            // txtConfirmPassword
+            // btnSave
             // 
-            txtConfirmPassword.Location = new Point(348, 203);
-            txtConfirmPassword.Name = "txtConfirmPassword";
-            txtConfirmPassword.PasswordChar = '*';
-            txtConfirmPassword.Size = new Size(250, 27);
-            txtConfirmPassword.TabIndex = 21;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(203, 206);
-            label6.Name = "label6";
-            label6.Size = new Size(139, 20);
-            label6.TabIndex = 28;
-            label6.Text = "Confirm-Password *";
-            // 
-            // btnRegister
-            // 
-            btnRegister.Location = new Point(348, 338);
-            btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(94, 29);
-            btnRegister.TabIndex = 26;
-            btnRegister.Text = "Register";
-            btnRegister.UseVisualStyleBackColor = true;
+            btnSave.DialogResult = DialogResult.OK;
+            btnSave.Location = new Point(348, 358);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 26;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(348, 292);
+            txtAddress.Location = new Point(348, 269);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(250, 27);
             txtAddress.TabIndex = 25;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(348, 161);
+            txtPassword.Location = new Point(348, 181);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(250, 27);
@@ -103,14 +91,14 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(348, 121);
+            txtEmail.Location = new Point(348, 141);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(250, 27);
             txtEmail.TabIndex = 17;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(348, 83);
+            txtUsername.Location = new Point(348, 103);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(250, 27);
             txtUsername.TabIndex = 15;
@@ -118,7 +106,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(203, 295);
+            label5.Location = new Point(203, 272);
             label5.Name = "label5";
             label5.Size = new Size(62, 20);
             label5.TabIndex = 24;
@@ -127,7 +115,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(203, 251);
+            label4.Location = new Point(203, 228);
             label4.Name = "label4";
             label4.Size = new Size(74, 20);
             label4.TabIndex = 22;
@@ -136,7 +124,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(203, 124);
+            label3.Location = new Point(203, 144);
             label3.Name = "label3";
             label3.Size = new Size(56, 20);
             label3.TabIndex = 20;
@@ -145,7 +133,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(203, 164);
+            label2.Location = new Point(203, 184);
             label2.Name = "label2";
             label2.Size = new Size(80, 20);
             label2.TabIndex = 18;
@@ -154,22 +142,58 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(203, 86);
+            label1.Location = new Point(203, 106);
             label1.Name = "label1";
             label1.Size = new Size(85, 20);
             label1.TabIndex = 16;
             label1.Text = "Username *";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(348, 9);
+            label7.Name = "label7";
+            label7.Size = new Size(138, 50);
+            label7.TabIndex = 29;
+            label7.Text = "Profile";
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(12, 411);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(35, 27);
+            txtId.TabIndex = 30;
+            // 
+            // lbRole
+            // 
+            lbRole.AutoSize = true;
+            lbRole.Location = new Point(203, 315);
+            lbRole.Name = "lbRole";
+            lbRole.Size = new Size(39, 20);
+            lbRole.TabIndex = 31;
+            lbRole.Text = "Role";
+            // 
+            // cboRole
+            // 
+            cboRole.FormattingEnabled = true;
+            cboRole.Location = new Point(348, 312);
+            cboRole.Name = "cboRole";
+            cboRole.Size = new Size(250, 28);
+            cboRole.TabIndex = 32;
             // 
             // frmUserDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnReset);
+            Controls.Add(cboRole);
+            Controls.Add(lbRole);
+            Controls.Add(txtId);
+            Controls.Add(label7);
+            Controls.Add(btnClose);
             Controls.Add(dtpkBirthday);
-            Controls.Add(txtConfirmPassword);
-            Controls.Add(label6);
-            Controls.Add(btnRegister);
+            Controls.Add(btnSave);
             Controls.Add(txtAddress);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
@@ -180,18 +204,17 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmUserDetail";
-            Text = "frmUserDetail";
+            Text = "User Detail";
+            Load += frmUserDetail_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnReset;
+        private Button btnClose;
         private DateTimePicker dtpkBirthday;
-        private TextBox txtConfirmPassword;
-        private Label label6;
-        private Button btnRegister;
+        private Button btnSave;
         private TextBox txtAddress;
         private TextBox txtPassword;
         private TextBox txtEmail;
@@ -201,5 +224,9 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label label7;
+        private TextBox txtId;
+        private Label lbRole;
+        private ComboBox cboRole;
     }
 }
