@@ -35,6 +35,7 @@ namespace GroupStudyWinApp
         {
             frmSubject frmSubject = new frmSubject();
             frmSubject.ShowDialog();
+        }
         //----------------------------------------------------
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {

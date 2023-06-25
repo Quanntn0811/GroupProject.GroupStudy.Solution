@@ -20,6 +20,6 @@ namespace Repositories
 
         public IEnumerable<Group> SortByID() => GroupDAO.SortById();
 
-        public IEnumerable<Subject> GetSubjects() => SubjectDAO.GetSubjects();
+        public IEnumerable<Subject> GetSubjects() => SubjectDAO.Instance.GetSubjects();
     }
 }
