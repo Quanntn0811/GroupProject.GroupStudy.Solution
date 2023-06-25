@@ -22,6 +22,10 @@ namespace GroupStudyWinApp
         {
             InitializeComponent();
         }
-
+        private void manageSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSubject frmSubject = new frmSubject();
+            frmSubject.ShowDialog();
+        }
     }
 }

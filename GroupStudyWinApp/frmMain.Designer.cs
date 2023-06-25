@@ -30,15 +30,15 @@
         {
             menuStrip1 = new MenuStrip();
             manageToolStripMenuItem = new ToolStripMenuItem();
-            profileToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
             manageSubjectToolStripMenuItem = new ToolStripMenuItem();
             manageGroupToolStripMenuItem = new ToolStripMenuItem();
             manageUserToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             groupToolStripMenuItem = new ToolStripMenuItem();
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
             yourGroupToolStripMenuItem = new ToolStripMenuItem();
+            profileToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,11 +59,24 @@
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
             // 
-            // profileToolStripMenuItem
+            // manageSubjectToolStripMenuItem
             // 
-            profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            profileToolStripMenuItem.Size = new Size(66, 24);
-            profileToolStripMenuItem.Text = "Profile";
+            manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
+            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
+            manageSubjectToolStripMenuItem.Text = "Manage Subject";
+            manageSubjectToolStripMenuItem.Click += manageSubjectToolStripMenuItem_Click;
+            // 
+            // manageGroupToolStripMenuItem
+            // 
+            manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
+            manageGroupToolStripMenuItem.Size = new Size(224, 26);
+            manageGroupToolStripMenuItem.Text = "Manage Group";
+            // 
+            // manageUserToolStripMenuItem
+            // 
+            manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
+            manageUserToolStripMenuItem.Size = new Size(224, 26);
+            manageUserToolStripMenuItem.Text = "Manage User";
             // 
             // exitToolStripMenuItem
             // 
@@ -79,24 +92,6 @@
             logoutToolStripMenuItem.Size = new Size(70, 24);
             logoutToolStripMenuItem.Text = "Logout";
             // 
-            // manageSubjectToolStripMenuItem
-            // 
-            manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
-            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
-            manageSubjectToolStripMenuItem.Text = "Manage Subject";
-            // 
-            // manageGroupToolStripMenuItem
-            // 
-            manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
-            manageGroupToolStripMenuItem.Size = new Size(224, 26);
-            manageGroupToolStripMenuItem.Text = "Manage Group";
-            // 
-            // manageUserToolStripMenuItem
-            // 
-            manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
-            manageUserToolStripMenuItem.Size = new Size(224, 26);
-            manageUserToolStripMenuItem.Text = "Manage User";
-            // 
             // groupToolStripMenuItem
             // 
             groupToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { joinGroupToolStripMenuItem, yourGroupToolStripMenuItem });
@@ -107,14 +102,20 @@
             // joinGroupToolStripMenuItem
             // 
             joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
-            joinGroupToolStripMenuItem.Size = new Size(224, 26);
+            joinGroupToolStripMenuItem.Size = new Size(166, 26);
             joinGroupToolStripMenuItem.Text = "Join Group";
             // 
             // yourGroupToolStripMenuItem
             // 
             yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
-            yourGroupToolStripMenuItem.Size = new Size(224, 26);
+            yourGroupToolStripMenuItem.Size = new Size(166, 26);
             yourGroupToolStripMenuItem.Text = "Your Group";
+            // 
+            // profileToolStripMenuItem
+            // 
+            profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            profileToolStripMenuItem.Size = new Size(66, 24);
+            profileToolStripMenuItem.Text = "Profile";
             // 
             // frmMain
             // 
