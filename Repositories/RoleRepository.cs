@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.EntityModels;
+using DataAccessObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IUserRepository
+    public class RoleRepository : IRoleRepository
     {
-        IEnumerable<User> GetUsers();
-        void AddNew(User user);
-        void Update(User user);
+        public IEnumerable<Role> GetRoles() => RoleDAO.Instance.GetRoles();
     }
 }
