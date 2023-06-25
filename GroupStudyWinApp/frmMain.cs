@@ -23,5 +23,11 @@ namespace GroupStudyWinApp
             InitializeComponent();
         }
 
+        private void manageGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGroup f = new frmGroup();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }
