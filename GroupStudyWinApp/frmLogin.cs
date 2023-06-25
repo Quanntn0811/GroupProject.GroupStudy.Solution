@@ -38,6 +38,7 @@ namespace GroupStudyWinApp
                         {
                             IsAdminOrStudent = true,
                             CurrentUser = cus,
+                            Repo = repo,
                         };
 
                         f.Show();
@@ -49,6 +50,7 @@ namespace GroupStudyWinApp
                         {
                             IsAdminOrStudent = false,
                             CurrentUser = cus,
+                            Repo = repo,
                         };
 
                         f.Show();

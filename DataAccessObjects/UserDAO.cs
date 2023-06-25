@@ -34,7 +34,7 @@ public class UserDAO
     }
 
     //----------------------------------------
-    // Get list users
+    // Get user list
     public List<User> GetUsers() => _context.Users.Include(x => x.Role).ToList();
 
     // Get user by id
@@ -74,6 +74,7 @@ public class UserDAO
         {
             _context.ChangeTracker.Clear();
             _context.Users.Update(newUser);
+            _context.SaveChanges();
         }
         else
         {

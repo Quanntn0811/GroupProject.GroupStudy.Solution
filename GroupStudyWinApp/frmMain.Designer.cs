@@ -30,15 +30,15 @@
         {
             menuStrip1 = new MenuStrip();
             manageToolStripMenuItem = new ToolStripMenuItem();
-            profileToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
             manageSubjectToolStripMenuItem = new ToolStripMenuItem();
             manageGroupToolStripMenuItem = new ToolStripMenuItem();
             manageUserToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             groupToolStripMenuItem = new ToolStripMenuItem();
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
             yourGroupToolStripMenuItem = new ToolStripMenuItem();
+            profileToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, exitToolStripMenuItem, logoutToolStripMenuItem, groupToolStripMenuItem, profileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Size = new Size(866, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -59,11 +59,23 @@
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
             // 
-            // profileToolStripMenuItem
+            // manageSubjectToolStripMenuItem
             // 
-            profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            profileToolStripMenuItem.Size = new Size(66, 24);
-            profileToolStripMenuItem.Text = "Profile";
+            manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
+            manageSubjectToolStripMenuItem.Size = new Size(199, 26);
+            manageSubjectToolStripMenuItem.Text = "Manage Subject";
+            // 
+            // manageGroupToolStripMenuItem
+            // 
+            manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
+            manageGroupToolStripMenuItem.Size = new Size(199, 26);
+            manageGroupToolStripMenuItem.Text = "Manage Group";
+            // 
+            // manageUserToolStripMenuItem
+            // 
+            manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
+            manageUserToolStripMenuItem.Size = new Size(199, 26);
+            manageUserToolStripMenuItem.Text = "Manage User";
             // 
             // exitToolStripMenuItem
             // 
@@ -71,6 +83,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(47, 24);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
@@ -78,24 +91,7 @@
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             logoutToolStripMenuItem.Size = new Size(70, 24);
             logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // manageSubjectToolStripMenuItem
-            // 
-            manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
-            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
-            manageSubjectToolStripMenuItem.Text = "Manage Subject";
-            // 
-            // manageGroupToolStripMenuItem
-            // 
-            manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
-            manageGroupToolStripMenuItem.Size = new Size(224, 26);
-            manageGroupToolStripMenuItem.Text = "Manage Group";
-            // 
-            // manageUserToolStripMenuItem
-            // 
-            manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
-            manageUserToolStripMenuItem.Size = new Size(224, 26);
-            manageUserToolStripMenuItem.Text = "Manage User";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // groupToolStripMenuItem
             // 
@@ -107,24 +103,34 @@
             // joinGroupToolStripMenuItem
             // 
             joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
-            joinGroupToolStripMenuItem.Size = new Size(224, 26);
+            joinGroupToolStripMenuItem.Size = new Size(166, 26);
             joinGroupToolStripMenuItem.Text = "Join Group";
             // 
             // yourGroupToolStripMenuItem
             // 
             yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
-            yourGroupToolStripMenuItem.Size = new Size(224, 26);
+            yourGroupToolStripMenuItem.Size = new Size(166, 26);
             yourGroupToolStripMenuItem.Text = "Your Group";
+            // 
+            // profileToolStripMenuItem
+            // 
+            profileToolStripMenuItem.Name = "profileToolStripMenuItem";
+            profileToolStripMenuItem.Size = new Size(66, 24);
+            profileToolStripMenuItem.Text = "Profile";
+            profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
             // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(866, 512);
             Controls.Add(menuStrip1);
+            IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Group Study";
+            Load += frmMain_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
