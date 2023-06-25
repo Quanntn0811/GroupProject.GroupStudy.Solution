@@ -33,13 +33,19 @@
             profileToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
+            manageSubjectToolStripMenuItem = new ToolStripMenuItem();
+            manageGroupToolStripMenuItem = new ToolStripMenuItem();
+            manageUserToolStripMenuItem = new ToolStripMenuItem();
+            groupToolStripMenuItem = new ToolStripMenuItem();
+            joinGroupToolStripMenuItem = new ToolStripMenuItem();
+            yourGroupToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, profileToolStripMenuItem, exitToolStripMenuItem, logoutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, exitToolStripMenuItem, logoutToolStripMenuItem, groupToolStripMenuItem, profileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -48,6 +54,7 @@
             // 
             // manageToolStripMenuItem
             // 
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -72,6 +79,43 @@
             logoutToolStripMenuItem.Size = new Size(70, 24);
             logoutToolStripMenuItem.Text = "Logout";
             // 
+            // manageSubjectToolStripMenuItem
+            // 
+            manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
+            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
+            manageSubjectToolStripMenuItem.Text = "Manage Subject";
+            // 
+            // manageGroupToolStripMenuItem
+            // 
+            manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
+            manageGroupToolStripMenuItem.Size = new Size(224, 26);
+            manageGroupToolStripMenuItem.Text = "Manage Group";
+            // 
+            // manageUserToolStripMenuItem
+            // 
+            manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
+            manageUserToolStripMenuItem.Size = new Size(224, 26);
+            manageUserToolStripMenuItem.Text = "Manage User";
+            // 
+            // groupToolStripMenuItem
+            // 
+            groupToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { joinGroupToolStripMenuItem, yourGroupToolStripMenuItem });
+            groupToolStripMenuItem.Name = "groupToolStripMenuItem";
+            groupToolStripMenuItem.Size = new Size(64, 24);
+            groupToolStripMenuItem.Text = "Group";
+            // 
+            // joinGroupToolStripMenuItem
+            // 
+            joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
+            joinGroupToolStripMenuItem.Size = new Size(224, 26);
+            joinGroupToolStripMenuItem.Text = "Join Group";
+            // 
+            // yourGroupToolStripMenuItem
+            // 
+            yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
+            yourGroupToolStripMenuItem.Size = new Size(224, 26);
+            yourGroupToolStripMenuItem.Text = "Your Group";
+            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -80,7 +124,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "frmMain";
-            Text = "frmMain";
+            Text = "Group Study";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -94,5 +138,11 @@
         private ToolStripMenuItem profileToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
+        private ToolStripMenuItem manageSubjectToolStripMenuItem;
+        private ToolStripMenuItem manageGroupToolStripMenuItem;
+        private ToolStripMenuItem manageUserToolStripMenuItem;
+        private ToolStripMenuItem groupToolStripMenuItem;
+        private ToolStripMenuItem joinGroupToolStripMenuItem;
+        private ToolStripMenuItem yourGroupToolStripMenuItem;
     }
 }
