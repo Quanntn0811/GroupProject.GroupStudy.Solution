@@ -64,6 +64,8 @@
             manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
             manageSubjectToolStripMenuItem.Size = new Size(199, 26);
             manageSubjectToolStripMenuItem.Text = "Manage Subject";
+            manageSubjectToolStripMenuItem.Click += manageSubjectToolStripMenuItem_Click;
+
             // 
             // manageGroupToolStripMenuItem
             // 
@@ -93,6 +95,20 @@
             logoutToolStripMenuItem.Size = new Size(70, 24);
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(47, 24);
+            exitToolStripMenuItem.Text = "Exit";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(70, 24);
+            logoutToolStripMenuItem.Text = "Logout";
             // 
             // groupToolStripMenuItem
             // 

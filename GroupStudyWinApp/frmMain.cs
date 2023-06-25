@@ -31,6 +31,10 @@ namespace GroupStudyWinApp
                 manageToolStripMenuItem.Enabled = false;
             }
         }
+        private void manageSubjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSubject frmSubject = new frmSubject();
+            frmSubject.ShowDialog();
         //----------------------------------------------------
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
