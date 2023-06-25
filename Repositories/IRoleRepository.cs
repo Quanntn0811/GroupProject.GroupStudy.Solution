@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IUserRepository
+    public interface IRoleRepository
     {
-        IEnumerable<User> GetUsers();
-        void AddNew(User user);
-        void Update(User user);
+        IEnumerable<Role> GetRoles(); 
     }
 }

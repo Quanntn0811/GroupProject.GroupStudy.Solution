@@ -13,5 +13,7 @@ namespace Repositories
         public void AddNew(User user) => UserDAO.Instance.AddNew(user);
 
         public IEnumerable<User> GetUsers() => UserDAO.Instance.GetUsers();
+
+        public void Update(User user) => UserDAO.Instance.Update(user);
     }
 }
