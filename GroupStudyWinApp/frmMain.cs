@@ -54,12 +54,18 @@ namespace GroupStudyWinApp
             };
 
             f.DialogOk += DialogForm_DialogClosed;
-
             f.MdiParent = this;
             f.Show();
 
         }
-
+        
+        private void manageGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGroup f = new frmGroup();
+            f.MdiParent = this;
+            f.Show();
+        }
+        
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult d = MessageBox.Show("Are you sure you want to log out", "Notification",

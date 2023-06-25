@@ -70,6 +70,7 @@
             manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
             manageGroupToolStripMenuItem.Size = new Size(199, 26);
             manageGroupToolStripMenuItem.Text = "Manage Group";
+            manageGroupToolStripMenuItem.Click += manageGroupToolStripMenuItem_Click;
             // 
             // manageUserToolStripMenuItem
             // 
