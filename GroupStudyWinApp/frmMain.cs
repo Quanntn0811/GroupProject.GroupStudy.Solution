@@ -34,7 +34,8 @@ namespace GroupStudyWinApp
         private void manageSubjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSubject frmSubject = new frmSubject();
-            frmSubject.ShowDialog();
+            frmSubject.MdiParent = this;
+            frmSubject.Show();
         }
         //----------------------------------------------------
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
