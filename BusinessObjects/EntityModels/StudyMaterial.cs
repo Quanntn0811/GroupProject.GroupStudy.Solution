@@ -17,11 +17,11 @@ public partial class StudyMaterial
     public int? SlotId { get; set; }
 
     [Column("title")]
-    public int? Title { get; set; }
-
-    [Column("content")]
-    [StringLength(250)]
+    [StringLength(50)]
     [Unicode(false)]
+    public string? Title { get; set; }
+
+    [Column("content", TypeName = "text")]
     public string? Content { get; set; }
 
     [Column("link")]
@@ -31,6 +31,9 @@ public partial class StudyMaterial
 
     [Column("status")]
     public bool? Status { get; set; }
+
+    [InverseProperty("StudyMaterial")]
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
     [ForeignKey("SlotId")]
     [InverseProperty("StudyMaterials")]

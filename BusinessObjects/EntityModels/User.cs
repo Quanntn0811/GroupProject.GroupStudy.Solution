@@ -16,17 +16,17 @@ public partial class User
     [Column("username")]
     [StringLength(50)]
     [Unicode(false)]
-    public string Username { get; set; } = null!;
+    public string? Username { get; set; }
 
     [Column("email")]
     [StringLength(50)]
     [Unicode(false)]
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
     [Column("password")]
     [StringLength(50)]
     [Unicode(false)]
-    public string Password { get; set; } = null!;
+    public string? Password { get; set; }
 
     [Column("birthday", TypeName = "date")]
     public DateTime? Birthday { get; set; }
@@ -38,6 +38,9 @@ public partial class User
 
     [Column("roleId")]
     public int? RoleId { get; set; }
+
+    [InverseProperty("User")]
+    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
     [ForeignKey("RoleId")]
     [InverseProperty("Users")]
