@@ -11,5 +11,6 @@ namespace Repositories
     public class RoleRepository : IRoleRepository
     {
         public IEnumerable<Role> GetRoles() => RoleDAO.Instance.GetRoles();
+        public Role GetRole(int id) => RoleDAO.Instance.GetRole(id);
     }
 }

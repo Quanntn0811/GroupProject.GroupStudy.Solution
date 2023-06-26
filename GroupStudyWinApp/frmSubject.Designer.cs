@@ -50,7 +50,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(203, 9);
+            label1.Location = new Point(231, 9);
             label1.Name = "label1";
             label1.Size = new Size(359, 46);
             label1.TabIndex = 0;
@@ -196,7 +196,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmSubject";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Subject";
             ((System.ComponentModel.ISupportInitialize)dgvSubject).EndInit();
             ResumeLayout(false);

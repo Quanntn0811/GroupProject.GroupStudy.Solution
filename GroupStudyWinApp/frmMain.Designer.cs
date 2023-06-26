@@ -48,7 +48,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, exitToolStripMenuItem, logoutToolStripMenuItem, groupToolStripMenuItem, profileToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(866, 28);
+            menuStrip1.Size = new Size(882, 28);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +65,6 @@
             manageSubjectToolStripMenuItem.Size = new Size(199, 26);
             manageSubjectToolStripMenuItem.Text = "Manage Subject";
             manageSubjectToolStripMenuItem.Click += manageSubjectToolStripMenuItem_Click;
-
             // 
             // manageGroupToolStripMenuItem
             // 
@@ -79,6 +78,7 @@
             manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
             manageUserToolStripMenuItem.Size = new Size(199, 26);
             manageUserToolStripMenuItem.Text = "Manage User";
+            manageUserToolStripMenuItem.Click += manageUserToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -95,20 +95,6 @@
             logoutToolStripMenuItem.Size = new Size(70, 24);
             logoutToolStripMenuItem.Text = "Logout";
             logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
-            // 
-            // exitToolStripMenuItem
-            // 
-            exitToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(47, 24);
-            exitToolStripMenuItem.Text = "Exit";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            logoutToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(70, 24);
-            logoutToolStripMenuItem.Text = "Logout";
             // 
             // groupToolStripMenuItem
             // 
@@ -140,7 +126,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(866, 512);
+            ClientSize = new Size(882, 558);
             Controls.Add(menuStrip1);
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;

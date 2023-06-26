@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,14 +37,19 @@ namespace GroupStudyWinApp
             txtEmail.Text = UserInfo.Email;
             txtAddress.Text = UserInfo.Address;
             dtpkBirthday.Text = UserInfo.Birthday.ToString();
-            cboRole.DataSource = roleRepo.GetRoles().Select(x => x.RoleName).ToList();
-            cboRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboRole.Text = UserInfo.Role.RoleName;
 
             if (!IsAdminOrUser)
             {
-                lbRole.Visible = false;
                 cboRole.Visible = false;
+                txtRole.Text = UserInfo.Role.RoleName;
+                txtRole.ReadOnly = true;
+            }
+            else
+            {
+                txtRole.Visible = false;
+                cboRole.DataSource = roleRepo.GetRoles().Select(x => x.RoleName).ToList();
+                cboRole.DropDownStyle = ComboBoxStyle.DropDownList;
+                cboRole.Text = UserInfo.Role.RoleName;
             }
         }
 
@@ -91,15 +97,7 @@ namespace GroupStudyWinApp
                                 RoleId = role,
                             };
 
-                            if (!IsAdminOrUser)
-                            {
-                                Repo.Update(user);
-                            }
-                            else
-                            {
-                                Repo.AddNew(user);
-                            }
-
+                            Repo.Update(user);
                             MessageBox.Show("Update successfully", "Notification");
                             DialogOk?.Invoke(this, EventArgs.Empty);
                         }
