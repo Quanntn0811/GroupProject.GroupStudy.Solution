@@ -15,5 +15,6 @@ namespace Repositories
         void Delete(int id);
         IEnumerable<Group> SortSubjectId();
         IEnumerable<Subject> GetSubjects();
+        Group Find(int id);
     }
 }

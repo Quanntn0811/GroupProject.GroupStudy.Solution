@@ -122,5 +122,10 @@ namespace GroupStudyWinApp
             frmSubjectDetail.ShowDialog();
             LoadListSubject();
         }
+
+        private void frmSubject_Load(object sender, EventArgs e)
+        {
+            btnDelete.Enabled = false;
+        }
     }
 }
