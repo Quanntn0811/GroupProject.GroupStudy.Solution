@@ -35,8 +35,6 @@ public partial class GroupStudyContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer(GetConnectionString());
-
-
     // using System.IO
     // using Microsoft.Extensions.Configuration.Json;
     private string GetConnectionString()
@@ -44,7 +42,6 @@ public partial class GroupStudyContext : DbContext
         IConfiguration configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", true, true).Build();
-
         return configuration["ConnectionStrings:DefaultConnectionString"];
     }
 

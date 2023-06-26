@@ -41,6 +41,8 @@
             btnAdd = new Button();
             btnDelete = new Button();
             btnClose = new Button();
+            label5 = new Label();
+            txtSubjectName = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvSubject).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(53, 154);
+            label3.Location = new Point(432, 150);
             label3.Name = "label3";
             label3.Size = new Size(49, 20);
             label3.TabIndex = 2;
@@ -75,7 +77,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(421, 98);
+            label4.Location = new Point(53, 150);
             label4.Name = "label4";
             label4.Size = new Size(80, 20);
             label4.TabIndex = 3;
@@ -83,21 +85,21 @@
             // 
             // txtSubjectID
             // 
-            txtSubjectID.Location = new Point(132, 91);
+            txtSubjectID.Location = new Point(139, 91);
             txtSubjectID.Name = "txtSubjectID";
             txtSubjectID.Size = new Size(246, 27);
             txtSubjectID.TabIndex = 4;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(517, 91);
+            txtDescription.Location = new Point(139, 143);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(246, 27);
             txtDescription.TabIndex = 5;
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(132, 147);
+            txtStatus.Location = new Point(540, 147);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(246, 27);
             txtStatus.TabIndex = 6;
@@ -114,13 +116,13 @@
             dgvSubject.Name = "dgvSubject";
             dgvSubject.RowHeadersWidth = 51;
             dgvSubject.RowTemplate.Height = 29;
-            dgvSubject.Size = new Size(428, 221);
+            dgvSubject.Size = new Size(633, 221);
             dgvSubject.TabIndex = 7;
             dgvSubject.CellDoubleClick += dgvSubject_CellDoubleClick;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(598, 196);
+            btnLoad.Location = new Point(692, 195);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(94, 29);
             btnLoad.TabIndex = 8;
@@ -130,7 +132,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(598, 266);
+            btnAdd.Location = new Point(692, 265);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 9;
@@ -140,7 +142,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(598, 328);
+            btnDelete.Location = new Point(692, 327);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 10;
@@ -150,7 +152,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(598, 388);
+            btnClose.Location = new Point(692, 387);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 11;
@@ -158,11 +160,29 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(432, 98);
+            label5.Name = "label5";
+            label5.Size = new Size(102, 20);
+            label5.TabIndex = 12;
+            label5.Text = "Subject Name";
+            // 
+            // txtSubjectName
+            // 
+            txtSubjectName.Location = new Point(540, 91);
+            txtSubjectName.Name = "txtSubjectName";
+            txtSubjectName.Size = new Size(246, 27);
+            txtSubjectName.TabIndex = 13;
+            // 
             // frmSubject
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(807, 450);
+            ClientSize = new Size(837, 450);
+            Controls.Add(txtSubjectName);
+            Controls.Add(label5);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
@@ -198,5 +218,7 @@
         private Button btnAdd;
         private Button btnDelete;
         private Button btnClose;
+        private Label label5;
+        private TextBox txtSubjectName;
     }
 }

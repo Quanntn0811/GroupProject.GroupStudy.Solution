@@ -29,6 +29,7 @@ namespace GroupStudyWinApp
             return new Subject
             {
                 SubjectId = txtSubjectID.Text,
+                SubjectName = txtSubjectName.Text,
                 Description = txtDescription.Text,
                 Status = Convert.ToBoolean(txtStatus.Text),
             };
@@ -43,10 +44,12 @@ namespace GroupStudyWinApp
                 source.DataSource = subjects;
 
                 txtSubjectID.DataBindings.Clear();
+                txtSubjectName.DataBindings.Clear();
                 txtDescription.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
 
                 txtSubjectID.DataBindings.Add("Text", source, "subjectId");
+                txtSubjectName.DataBindings.Add("Text", source, "subjectName");
                 txtDescription.DataBindings.Add("Text", source, "description");
                 txtStatus.DataBindings.Add("Text", source, "status");
 
