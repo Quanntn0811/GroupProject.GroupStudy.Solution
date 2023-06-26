@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.EntityModels;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace GroupStudyWinApp
 {
@@ -24,14 +27,12 @@ namespace GroupStudyWinApp
         private void frmGroup_Load(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-
+            btnUpdate.Enabled = false;
         }
-
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadGroupList();
         }
-
         private void LoadGroupList()
         {
             var list = repo.GetGroups();
@@ -45,8 +46,8 @@ namespace GroupStudyWinApp
                 txtSize.DataBindings.Clear();
                 ckStatus.DataBindings.Clear();
 
-                txtGroupID.DataBindings.Add("Text", source, "GroupID");
-                txtSubjectID.DataBindings.Add("Text", source, "SubjectID");
+                txtGroupID.DataBindings.Add("Text", source, "GroupId");
+                txtSubjectID.DataBindings.Add("Text", source, "SubjectId");
                 txtSize.DataBindings.Add("Text", source, "Size");
                 ckStatus.DataBindings.Add("Checked", source, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
 
@@ -56,8 +57,13 @@ namespace GroupStudyWinApp
                 if (list.Count() != 0)
                 {
                     btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
                 }
-                else btnDelete.Enabled = false;
+                else
+                {
+                    btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                }
             }
             catch (Exception ex)
             {
@@ -65,6 +71,42 @@ namespace GroupStudyWinApp
             }
         }
 
+        private void LoadGroupList(IEnumerable<Group> list)
+        {
+            try
+            {
+                source = new BindingSource();
+                source.DataSource = list;
+
+                txtGroupID.DataBindings.Clear();
+                txtSubjectID.DataBindings.Clear();
+                txtSize.DataBindings.Clear();
+                ckStatus.DataBindings.Clear();
+
+                txtGroupID.DataBindings.Add("Text", source, "GroupId");
+                txtSubjectID.DataBindings.Add("Text", source, "SubjectId");
+                txtSize.DataBindings.Add("Text", source, "Size");
+                ckStatus.DataBindings.Add("Checked", source, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
+
+                dgvGroupList.DataSource = null;
+                dgvGroupList.DataSource = source;
+
+                if (list.Count() != 0)
+                {
+                    btnDelete.Enabled = true;
+                    btnUpdate.Enabled = true;
+                }
+                else
+                {
+                    btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult d;
@@ -78,14 +120,7 @@ namespace GroupStudyWinApp
                 LoadGroupList();
             }
         }
-
         private void btnClose_Click(object sender, EventArgs e) => Close();
-
-        private void btnSort_Click(object sender, EventArgs e)
-        {
-            repo.SortByID();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmGroupDetail f = new frmGroupDetail
@@ -101,8 +136,8 @@ namespace GroupStudyWinApp
                 LoadGroupList();
                 source.Position = source.Count - 1;
             }
+            LoadGroupList();
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Group group = new Group
@@ -124,5 +159,81 @@ namespace GroupStudyWinApp
                 LoadGroupList();
             }
         }
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            IEnumerable<Group> ListSearch;
+            if (txtSearch.Text == null || txtSearch.Text == "Search Subject here")
+            {
+                ListSearch = repo.GetGroups();
+            }
+            else
+            {
+                ListSearch = repo.GetGroups().Where(gr => gr.SubjectId.ToUpper().Contains(txtSearch.Text.ToUpper())).ToList();
+            }
+            LoadGroupList(ListSearch);
+        }
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search Subject here")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                txtSearch.Text = "Search Subject here";
+                txtSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        //private void loadOption()
+        //{
+        //    try
+        //    {
+        //        loadSubject();
+
+        //        cbOption.DataSource = listOption;
+        //        cbOption.DisplayMember = "Key";
+        //        cbOption.ValueMember = "Value";
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
+        //List<KeyValuePair<string, int>> listOption = new List<KeyValuePair<string, int>>();
+        //private void loadSubject()
+        //{
+        //    listOption.Add(new KeyValuePair<string, int>("All Subject", 0));
+        //    int count = 1;
+        //    foreach (var item in repo.GetSubjects())
+        //    {
+        //        listOption.Add(new KeyValuePair<string, int>(item.SubjectId.ToString(), count++));
+        //    }
+        //}
+        //private void cbOption_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (cbOption != null)
+        //        {
+        //            string option = cbOption.SelectedValue.ToString();
+        //            if (!option.Contains("All Subject"))
+        //            {
+        //                var list = (IEnumerable<Group>)repo.GetGroups().Where(x => option.Contains(x.SubjectId));
+        //                LoadGroupList(list);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+
+        //}
     }
 }

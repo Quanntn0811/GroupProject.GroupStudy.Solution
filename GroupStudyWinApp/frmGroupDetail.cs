@@ -39,6 +39,7 @@ namespace GroupStudyWinApp
             {
                 Group group = new Group
                 {
+                    GroupId = GroupInfo.GroupId,
                     SubjectId = cbSubjectID.SelectedValue.ToString(),
                     Size = int.Parse(txtSize.Text),
                     Status = ckStatus.Checked ? true : false
@@ -74,9 +75,33 @@ namespace GroupStudyWinApp
 
         private void frmGroupDetail_Load(object sender, EventArgs e)
         {
-            cbSubjectID.SelectedValue = GroupInfo.SubjectId;
+            LoadSubjectId();
+            if (AddOrUpdate)
+            {
+                cbSubjectID.SelectedIndex = 0;
+            }
+            else
+            {
+                lbSubjectID.Hide();
+                cbSubjectID.Hide();
+            }
             txtSize.Text = GroupInfo.Size.ToString();
-            ckStatus.Checked = GroupInfo.Status.HasValue? GroupInfo.Status.Value : false;
+            ckStatus.Checked = GroupInfo.Status.HasValue ? GroupInfo.Status.Value : false;
+        }
+
+        public void LoadSubjectId()
+        {
+            try
+            {
+                var subjectList = groupRepository.GetSubjects();
+                cbSubjectID.DataSource = subjectList;
+                cbSubjectID.DisplayMember = "SubjectId";
+                cbSubjectID.ValueMember = "SubjectId";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error on load list of SubjectId");
+            }
         }
     }
 }

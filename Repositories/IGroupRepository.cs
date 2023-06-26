@@ -13,7 +13,7 @@ namespace Repositories
         void Add(Group group);
         void Update(Group group);
         void Delete(int id);
-        IEnumerable<Group> SortByID();
+        IEnumerable<Group> SortSubjectId();
         IEnumerable<Subject> GetSubjects();
     }
 }

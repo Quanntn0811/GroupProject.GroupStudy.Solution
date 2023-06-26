@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.DBContext;
 using BusinessObjects.EntityModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,32 @@ namespace DataAccessObjects
 {
     public class GroupDAO
     {
-        private static GroupStudyContext _context = new GroupStudyContext();
+        GroupStudyContext _context = new GroupStudyContext();
+        public static GroupDAO instance = null;
+        private static object lockInstance = new object();
 
+        public static GroupDAO Instance
+        {
+            get
+            {
+                lock (lockInstance)
+                {
+                    if (instance == null)
+                    {
+                        instance = new GroupDAO();
+                    }
+                }
+                return instance;
+            }
+        }
         //GetGroups
-        public static IEnumerable<Group> GetGroups() => _context.Groups.ToList();
+        public IEnumerable<Group> GetGroups() => _context.Groups.ToList();
 
         //Find
-        private static Group Find(int id) => _context.Groups.FirstOrDefault(_ => _.GroupId == id);
+        private  Group Find(int id) => _context.Groups.FirstOrDefault(_ => _.GroupId == id);
 
         //AddNew
-        public static void Add(Group currentGroup)
+        public void Add(Group currentGroup)
         {
             if(currentGroup == null)
             {
@@ -34,7 +51,7 @@ namespace DataAccessObjects
         }
         
         //Update
-        public static void Update(Group currentGroup)
+        public void Update(Group currentGroup)
         {
             if(currentGroup == null)
             {
@@ -57,7 +74,7 @@ namespace DataAccessObjects
         }
 
         //Delete
-        public static void Delete(int Id)
+        public void Delete(int Id)
         {
             try
             {
@@ -74,9 +91,10 @@ namespace DataAccessObjects
             }
         }
 
-        public static IEnumerable<Group> SortById()
+        public IEnumerable<Group> SortSubjectId()
         {
-            return _context.Groups.OrderBy(_=> _.GroupId);
+            var list = _context.Groups.OrderByDescending(_ => _.Size);
+            return list;
         }
     }
 }

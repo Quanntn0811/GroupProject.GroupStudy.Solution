@@ -34,7 +34,6 @@
             dgvGroupList = new DataGridView();
             lbStatus = new Label();
             lbSize = new Label();
-            btnSort = new Button();
             btnClose = new Button();
             btnDelete = new Button();
             btnLoad = new Button();
@@ -44,6 +43,7 @@
             ckStatus = new CheckBox();
             btnAdd = new Button();
             btnUpdate = new Button();
+            txtSearch = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvGroupList).BeginInit();
             SuspendLayout();
             // 
@@ -103,16 +103,6 @@
             lbSize.TabIndex = 5;
             lbSize.Text = "Size";
             // 
-            // btnSort
-            // 
-            btnSort.Location = new Point(26, 165);
-            btnSort.Name = "btnSort";
-            btnSort.Size = new Size(94, 29);
-            btnSort.TabIndex = 99;
-            btnSort.Text = "Sort";
-            btnSort.UseVisualStyleBackColor = true;
-            btnSort.Click += btnSort_Click;
-            // 
             // btnClose
             // 
             btnClose.Location = new Point(602, 403);
@@ -148,6 +138,7 @@
             txtGroupID.BackColor = Color.White;
             txtGroupID.Location = new Point(122, 75);
             txtGroupID.Name = "txtGroupID";
+            txtGroupID.ReadOnly = true;
             txtGroupID.Size = new Size(190, 27);
             txtGroupID.TabIndex = 103;
             // 
@@ -156,6 +147,7 @@
             txtSubjectID.BackColor = Color.White;
             txtSubjectID.Location = new Point(122, 116);
             txtSubjectID.Name = "txtSubjectID";
+            txtSubjectID.ReadOnly = true;
             txtSubjectID.Size = new Size(190, 27);
             txtSubjectID.TabIndex = 104;
             // 
@@ -164,12 +156,14 @@
             txtSize.BackColor = Color.White;
             txtSize.Location = new Point(418, 75);
             txtSize.Name = "txtSize";
+            txtSize.ReadOnly = true;
             txtSize.Size = new Size(190, 27);
             txtSize.TabIndex = 105;
             // 
             // ckStatus
             // 
             ckStatus.AutoSize = true;
+            ckStatus.Enabled = false;
             ckStatus.Location = new Point(418, 122);
             ckStatus.Name = "ckStatus";
             ckStatus.Size = new Size(18, 17);
@@ -196,11 +190,24 @@
             btnUpdate.UseVisualStyleBackColor = true;
             btnUpdate.Click += btnUpdate_Click;
             // 
+            // txtSearch
+            // 
+            txtSearch.ForeColor = SystemColors.ControlDark;
+            txtSearch.Location = new Point(26, 172);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(242, 27);
+            txtSearch.TabIndex = 109;
+            txtSearch.Text = "Search Subject here";
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            txtSearch.Enter += txtSearch_Enter;
+            txtSearch.Leave += txtSearch_Leave;
+            // 
             // frmGroup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(733, 446);
+            Controls.Add(txtSearch);
             Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
             Controls.Add(ckStatus);
@@ -210,7 +217,6 @@
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
             Controls.Add(btnLoad);
-            Controls.Add(btnSort);
             Controls.Add(lbStatus);
             Controls.Add(lbSize);
             Controls.Add(dgvGroupList);
@@ -243,5 +249,7 @@
         private CheckBox ckStatus;
         private Button btnAdd;
         private Button btnUpdate;
+        private ComboBox cbOption;
+        private TextBox txtSearch;
     }
 }

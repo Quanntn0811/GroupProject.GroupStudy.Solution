@@ -10,15 +10,15 @@ namespace Repositories
 {
     public class GroupRepository : IGroupRepository
     {
-        public void Add(Group group) => GroupDAO.Add(group);
+        public void Add(Group group) => GroupDAO.Instance.Add(group);
 
-        public void Delete(int id) => GroupDAO.Delete(id);
+        public void Delete(int id) => GroupDAO.Instance.Delete(id);
 
-        public void Update(Group group) => GroupDAO.Update(group);
+        public void Update(Group group) => GroupDAO.Instance.Update(group);
 
-        public IEnumerable<Group> GetGroups() => GroupDAO.GetGroups();
+        public IEnumerable<Group> GetGroups() => GroupDAO.Instance.GetGroups();
 
-        public IEnumerable<Group> SortByID() => GroupDAO.SortById();
+        public IEnumerable<Group> SortSubjectId() => GroupDAO.Instance.SortSubjectId();
 
         public IEnumerable<Subject> GetSubjects() => SubjectDAO.Instance.GetSubjects();
     }
