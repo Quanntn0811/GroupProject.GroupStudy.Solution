@@ -44,6 +44,7 @@
             txtId = new TextBox();
             lbRole = new Label();
             cboRole = new ComboBox();
+            txtRole = new TextBox();
             SuspendLayout();
             // 
             // btnClose
@@ -182,11 +183,19 @@
             cboRole.Size = new Size(250, 28);
             cboRole.TabIndex = 32;
             // 
+            // txtRole
+            // 
+            txtRole.Location = new Point(348, 312);
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(250, 27);
+            txtRole.TabIndex = 33;
+            // 
             // frmUserDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtRole);
             Controls.Add(cboRole);
             Controls.Add(lbRole);
             Controls.Add(txtId);
@@ -204,6 +213,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmUserDetail";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User Detail";
             Load += frmUserDetail_Load;
             ResumeLayout(false);
@@ -228,5 +238,6 @@
         private TextBox txtId;
         private Label lbRole;
         private ComboBox cboRole;
+        private TextBox txtRole;
     }
 }
