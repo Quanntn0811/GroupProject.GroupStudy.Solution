@@ -103,5 +103,14 @@ namespace GroupStudyWinApp
             LoadCurrentUser();
         }
 
+        private void joinGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmJoinGroup frm = new frmJoinGroup
+            {
+                currentUser = this.CurrentUser
+            };
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

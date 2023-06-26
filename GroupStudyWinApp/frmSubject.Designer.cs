@@ -87,13 +87,16 @@
             // 
             txtSubjectID.Location = new Point(139, 91);
             txtSubjectID.Name = "txtSubjectID";
+            txtSubjectID.ReadOnly = true;
             txtSubjectID.Size = new Size(246, 27);
             txtSubjectID.TabIndex = 4;
             // 
             // txtDescription
             // 
+            txtDescription.AcceptsReturn = true;
             txtDescription.Location = new Point(139, 143);
             txtDescription.Name = "txtDescription";
+            txtDescription.ReadOnly = true;
             txtDescription.Size = new Size(246, 27);
             txtDescription.TabIndex = 5;
             // 
@@ -101,6 +104,7 @@
             // 
             txtStatus.Location = new Point(540, 147);
             txtStatus.Name = "txtStatus";
+            txtStatus.ReadOnly = true;
             txtStatus.Size = new Size(246, 27);
             txtStatus.TabIndex = 6;
             // 
@@ -173,6 +177,7 @@
             // 
             txtSubjectName.Location = new Point(540, 91);
             txtSubjectName.Name = "txtSubjectName";
+            txtSubjectName.ReadOnly = true;
             txtSubjectName.Size = new Size(246, 27);
             txtSubjectName.TabIndex = 13;
             // 
@@ -198,6 +203,7 @@
             Name = "frmSubject";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Subject";
+            Load += frmSubject_Load;
             ((System.ComponentModel.ISupportInitialize)dgvSubject).EndInit();
             ResumeLayout(false);
             PerformLayout();

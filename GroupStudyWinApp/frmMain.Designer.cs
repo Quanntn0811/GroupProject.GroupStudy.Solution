@@ -106,13 +106,14 @@
             // joinGroupToolStripMenuItem
             // 
             joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
-            joinGroupToolStripMenuItem.Size = new Size(166, 26);
+            joinGroupToolStripMenuItem.Size = new Size(224, 26);
             joinGroupToolStripMenuItem.Text = "Join Group";
+            joinGroupToolStripMenuItem.Click += joinGroupToolStripMenuItem_Click;
             // 
             // yourGroupToolStripMenuItem
             // 
             yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
-            yourGroupToolStripMenuItem.Size = new Size(166, 26);
+            yourGroupToolStripMenuItem.Size = new Size(224, 26);
             yourGroupToolStripMenuItem.Text = "Your Group";
             // 
             // profileToolStripMenuItem
