@@ -15,14 +15,12 @@ public partial class Subject
     [Unicode(false)]
     public string SubjectId { get; set; } = null!;
 
-    //[Column("subjectName")]
-    //[StringLength(50)]
-    //[Unicode(false)]
-    //public string? SubjectName { get; set; }
-
-    [Column("description")]
-    [StringLength(250)]
+    [Column("subjectName")]
+    [StringLength(50)]
     [Unicode(false)]
+    public string? SubjectName { get; set; }
+
+    [Column("description", TypeName = "text")]
     public string? Description { get; set; }
 
     [Column("status")]

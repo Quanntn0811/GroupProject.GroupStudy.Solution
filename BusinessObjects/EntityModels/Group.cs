@@ -16,7 +16,7 @@ public partial class Group
     [Column("subjectId")]
     [StringLength(10)]
     [Unicode(false)]
-    public string? SubjectId { get; set; }
+    public string SubjectId { get; set; } = null!;
 
     [Column("size")]
     public int? Size { get; set; }
@@ -29,5 +29,5 @@ public partial class Group
 
     [ForeignKey("SubjectId")]
     [InverseProperty("Groups")]
-    public virtual Subject? Subject { get; set; }
+    public virtual Subject Subject { get; set; } = null!;
 }

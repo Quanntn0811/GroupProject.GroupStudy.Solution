@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using BusinessObjects.EntityModels;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace BusinessObjects.DBContext;
 
@@ -16,6 +15,8 @@ public partial class GroupStudyContext : DbContext
         : base(options)
     {
     }
+
+    public virtual DbSet<Comment> Comments { get; set; }
 
     public virtual DbSet<Group> Groups { get; set; }
 
@@ -32,23 +33,22 @@ public partial class GroupStudyContext : DbContext
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer(GetConnectionString());
-
-    private string GetConnectionString()
-    {
-        IConfiguration configuration = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", true, true).Build();
-
-        return configuration["ConnectionStrings:DefaultConnectionString"];
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("server=(local);database=GroupStudy;uid=sa;pwd=123456789;Trustservercertificate=true");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Comment>(entity =>
+        {
+            entity.HasOne(d => d.StudyMaterial).WithMany(p => p.Comments).HasConstraintName("FK_Comment_StudyMaterial");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Comments).HasConstraintName("FK_Comment_User");
+        });
+
         modelBuilder.Entity<Group>(entity =>
         {
             entity.HasOne(d => d.Subject).WithMany(p => p.Groups)
-                .OnDelete(DeleteBehavior.SetNull)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Group_Subject");
         });
 
