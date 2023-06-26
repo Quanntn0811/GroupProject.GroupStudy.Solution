@@ -12,5 +12,6 @@ namespace Repositories
         IEnumerable<User> GetUsers();
         void AddNew(User user);
         void Update(User user);
+        void Delete(int id);
     }
 }

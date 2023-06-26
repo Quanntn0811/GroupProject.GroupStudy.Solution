@@ -10,5 +10,6 @@ namespace Repositories
     public interface IRoleRepository
     {
         IEnumerable<Role> GetRoles(); 
+        Role GetRole(int id);
     }
 }

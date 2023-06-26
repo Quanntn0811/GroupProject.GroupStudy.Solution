@@ -35,5 +35,12 @@ namespace DataAccessObjects
         //----------------------------------------
         // Get role list
         public List<Role> GetRoles() => _context.Roles.ToList();
+
+        // Get role
+        public Role GetRole(int id)
+        {
+            var role = _context.Roles.SingleOrDefault(x => x.RoleId == id);
+            return role;
+        }
     }
 }
