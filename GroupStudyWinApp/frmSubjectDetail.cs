@@ -49,18 +49,20 @@ namespace GroupStudyWinApp
             {
                 status = false;
             }
-            // Check ID and Description not blank. If blank show the note to user and do not save.
+            // Check ID, name, Description not blank. If blank show the note to user and do not save.
             bool emptyID = txtSubjectID.Text.Length == 0 ? true : false;
+            bool emptyName = txtSubjectName.Text.Length == 0 ? true : false;
             bool emptyDescription = txtDescription.Text.Length == 0 ? true : false;
-            if (!emptyID && !emptyDescription)
+            if (!emptyID && !emptyDescription && !emptyName)
             {
                 Subject subject = new Subject
                 {
                     SubjectId = txtSubjectID.Text,
+                    SubjectName = txtSubjectName.Text,
                     Description = txtDescription.Text,
                     Status = status,
                 };
-                
+
                 if (isAdd) // if isAdd == true will show a message to user add successfully
                 {
                     repoSubject.AddSubject(subject);
@@ -84,19 +86,21 @@ namespace GroupStudyWinApp
         private void frmSubjectDetail_Load(object sender, EventArgs e)
         {
             // if is update will fill data from currentSubject to txtSubjectID, txtDescription
-            if(!isAdd)
+            if (!isAdd)
             {
                 txtSubjectID.Text = currentSubject.SubjectId;
                 txtDescription.Text = currentSubject.Description;
+                txtSubjectName.Text = currentSubject.SubjectName;
                 txtSubjectID.Enabled = isAdd;
                 // status can be null in sql so that check solution is null
-                if(currentSubject.Status != null)
+                if (currentSubject.Status != null)
                 {
                     // if status true radioStatusTrue will check, otherwise radioStatusFalse
-                    if(currentSubject.Status == true)
+                    if (currentSubject.Status == true)
                     {
                         radioStatusTrue.Checked = true;
-                    } else
+                    }
+                    else
                     {
                         radioStatusFalse.Checked = true;
                     }

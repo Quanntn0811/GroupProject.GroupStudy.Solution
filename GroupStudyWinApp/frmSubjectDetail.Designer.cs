@@ -37,12 +37,14 @@
             radioStatusFalse = new RadioButton();
             btnSave = new Button();
             btnCancel = new Button();
+            label4 = new Label();
+            txtSubjectName = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 80);
+            label1.Location = new Point(36, 19);
             label1.Name = "label1";
             label1.Size = new Size(77, 20);
             label1.TabIndex = 0;
@@ -68,7 +70,7 @@
             // 
             // txtSubjectID
             // 
-            txtSubjectID.Location = new Point(150, 73);
+            txtSubjectID.Location = new Point(150, 12);
             txtSubjectID.Name = "txtSubjectID";
             txtSubjectID.Size = new Size(293, 27);
             txtSubjectID.TabIndex = 4;
@@ -122,11 +124,29 @@
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(36, 75);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 20);
+            label4.TabIndex = 11;
+            label4.Text = "Subject Name";
+            // 
+            // txtSubjectName
+            // 
+            txtSubjectName.Location = new Point(150, 72);
+            txtSubjectName.Name = "txtSubjectName";
+            txtSubjectName.Size = new Size(293, 27);
+            txtSubjectName.TabIndex = 12;
+            // 
             // frmSubjectDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(492, 355);
+            Controls.Add(txtSubjectName);
+            Controls.Add(label4);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(radioStatusFalse);
@@ -154,5 +174,7 @@
         private RadioButton radioStatusFalse;
         private Button btnSave;
         private Button btnCancel;
+        private Label label4;
+        private TextBox txtSubjectName;
     }
 }
