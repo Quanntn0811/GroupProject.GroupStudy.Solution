@@ -13,5 +13,6 @@ namespace Repositories
         void AddNew(User user);
         void Update(User user);
         void Delete(int id);
+        User GetUserById(int id);
     }
 }

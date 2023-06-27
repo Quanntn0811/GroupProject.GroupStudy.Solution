@@ -115,6 +115,7 @@
             yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
             yourGroupToolStripMenuItem.Size = new Size(224, 26);
             yourGroupToolStripMenuItem.Text = "Your Group";
+            yourGroupToolStripMenuItem.Click += yourGroupToolStripMenuItem_Click;
             // 
             // profileToolStripMenuItem
             // 

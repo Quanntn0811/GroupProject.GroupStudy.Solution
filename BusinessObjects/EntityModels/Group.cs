@@ -25,6 +25,9 @@ public partial class Group
     public bool? Status { get; set; }
 
     [InverseProperty("Group")]
+    public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
+
+    [InverseProperty("Group")]
     public virtual ICollection<Slot> Slots { get; set; } = new List<Slot>();
 
     [ForeignKey("SubjectId")]

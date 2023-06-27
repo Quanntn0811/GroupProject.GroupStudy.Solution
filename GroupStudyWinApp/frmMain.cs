@@ -90,6 +90,25 @@ namespace GroupStudyWinApp
             f.MdiParent = this;
             f.Show();
         }
+
+        private void yourGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmYourGroup f = new frmYourGroup
+            {
+                CurrentUser = this.CurrentUser,
+            };
+            f.MdiParent = this;
+            f.Show();
+        }
+        private void joinGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmJoinGroup frm = new frmJoinGroup
+            {
+                CurrentUser = this.CurrentUser
+            };
+            frm.MdiParent = this;
+            frm.Show();
+        }
         //----------------------------------------------------
         private void LoadCurrentUser()
         {
@@ -103,14 +122,5 @@ namespace GroupStudyWinApp
             LoadCurrentUser();
         }
 
-        private void joinGroupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmJoinGroup frm = new frmJoinGroup
-            {
-                currentUser = this.CurrentUser
-            };
-            frm.MdiParent = this;
-            frm.Show();
-        }
     }
 }

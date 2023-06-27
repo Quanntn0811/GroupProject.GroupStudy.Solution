@@ -14,7 +14,7 @@ namespace Repositories
         List<Participant> GetGroupsJoined(int userID);
         void AddParticipant(Participant participant);
         void DeleteParticipant(Participant participant);
-
         List<User> GetListUserInGroup(int groupID);
+        List<Group> GetListByUserId(int userId);
     }
 }
