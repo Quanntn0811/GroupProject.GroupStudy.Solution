@@ -71,5 +71,12 @@ namespace DataAccessObjects
                 throw new Exception("Can not delete particpant");
             }
         }
+    
+        //Get listUser in Group
+        public List<User> GetListUserInGroup(int groupID)
+        {
+            var list = _context.Participants.Where(x => x.GroupId == groupID).Select(x => x.User).ToList();
+            return list;
+        }
     }
 }

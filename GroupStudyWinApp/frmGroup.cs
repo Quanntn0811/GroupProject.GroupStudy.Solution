@@ -189,6 +189,18 @@ namespace GroupStudyWinApp
             }
         }
 
+        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmGroupUser f = new frmGroupUser
+            {
+                GroupId = int.Parse(txtGroupID.Text)
+            };
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                LoadGroupList();
+            }
+        }
+
         //private void loadOption()
         //{
         //    try
