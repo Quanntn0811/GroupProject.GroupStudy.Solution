@@ -70,6 +70,7 @@
             // btnDelete
             // 
             btnDelete.Location = new Point(590, 258);
+
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 3;
@@ -235,5 +236,6 @@
         private Label label4;
         private Label label3;
         private Label ID;
+
     }
 }
