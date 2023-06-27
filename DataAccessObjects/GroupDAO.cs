@@ -33,7 +33,7 @@ namespace DataAccessObjects
         public IEnumerable<Group> GetGroups() => _context.Groups.ToList();
 
         //Find
-        public  Group Find(int id) => _context.Groups.FirstOrDefault(_ => _.GroupId == id);
+        public Group Find(int id) => _context.Groups.FirstOrDefault(_ => _.GroupId == id);
 
         //AddNew
         public void Add(Group currentGroup)
@@ -96,5 +96,13 @@ namespace DataAccessObjects
             var list = _context.Groups.OrderByDescending(_ => _.Size);
             return list;
         }
+        
+        // Get group by user
+        /*public IEnumerable<Group> GetGroupByUser(int userId)
+        {
+            var groups = from g in GetGroups()
+
+            return group;
+        }*/
     }
 }

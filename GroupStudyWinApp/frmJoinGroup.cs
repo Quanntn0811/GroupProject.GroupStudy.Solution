@@ -16,9 +16,14 @@ namespace GroupStudyWinApp
     {
         IParticipantRepository repoParticipant = new ParticipantRepository();
         IGroupRepository repoGroup = new GroupRepository();
-        public User currentUser { get; set; }
         BindingSource source;
-        //------------------------------------
+        //-------------------------------------------------
+        public frmJoinGroup()
+        {
+            InitializeComponent();
+        }
+        public User CurrentUser { get; set; }
+        //-------------------------------------------------
         private void ClearText()
         {
             txtGroupID.Text = string.Empty;
@@ -37,10 +42,10 @@ namespace GroupStudyWinApp
                 Status = Convert.ToBoolean(txtStatus.Text)
             };
         }
-        private void LoadJoinGroup()
+        private void LoadUnjoinedGroup()
         {
             List<Group> listGroups = (List<Group>)repoGroup.GetGroups();
-            List<Participant> listP = repoParticipant.GetGroupsJoined(currentUser.UserId);
+            List<Participant> listP = repoParticipant.GetGroupsJoined(CurrentUser.UserId);
             foreach (var p in listP)
             {
                 Group check = repoGroup.Find((int)p.GroupId);
@@ -84,11 +89,7 @@ namespace GroupStudyWinApp
                 throw new Exception("Load join group");
             }
         }
-        //------------------------------------
-        public frmJoinGroup()
-        {
-            InitializeComponent();
-        }
+        //-------------------------------------------------
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -100,7 +101,7 @@ namespace GroupStudyWinApp
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            LoadJoinGroup();
+            LoadUnjoinedGroup();
         }
 
         private void frmJoinGroup_Load(object sender, EventArgs e)
@@ -115,10 +116,24 @@ namespace GroupStudyWinApp
             {
                 int join = repoParticipant.NumberStudentInGroup(group.GroupId);
                 txtJoined.Text = join.ToString();
-            } else
+            }
+            else
             {
                 throw new Exception("Can not see joined");
             }
+        }
+
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            Participant participant = new Participant
+            {
+                UserId = CurrentUser.UserId,
+                GroupId = Convert.ToInt32(txtGroupID.Text),
+            };
+
+            repoParticipant.AddParticipant(participant);
+            MessageBox.Show("Join successfully!", "Notification");
+            LoadUnjoinedGroup();
         }
     }
 }

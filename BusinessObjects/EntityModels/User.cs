@@ -42,6 +42,9 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
+    [InverseProperty("User")]
+    public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
+
     [ForeignKey("RoleId")]
     [InverseProperty("Users")]
     public virtual Role? Role { get; set; }
