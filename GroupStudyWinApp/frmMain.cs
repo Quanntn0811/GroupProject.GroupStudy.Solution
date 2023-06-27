@@ -33,9 +33,9 @@ namespace GroupStudyWinApp
         }
         private void manageSubjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSubject frmSubject = new frmSubject();
-            frmSubject.MdiParent = this;
-            frmSubject.Show();
+            frmSubject f = new frmSubject();
+            f.MdiParent = this;
+            f.Show();
         }
         //----------------------------------------------------
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,14 +64,14 @@ namespace GroupStudyWinApp
             f.Show();
 
         }
-        
+
         private void manageGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmGroup f = new frmGroup();
             f.MdiParent = this;
             f.Show();
         }
-        
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult d = MessageBox.Show("Are you sure you want to log out", "Notification",
@@ -84,6 +84,12 @@ namespace GroupStudyWinApp
                 this.Close();
             }
         }
+        private void manageUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUser f = new frmUser();
+            f.MdiParent = this;
+            f.Show();
+        }
         //----------------------------------------------------
         private void LoadCurrentUser()
         {
@@ -95,6 +101,16 @@ namespace GroupStudyWinApp
             // Handle the event here
             // Perform actions or call methods associated with the OK event
             LoadCurrentUser();
+        }
+
+        private void joinGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmJoinGroup frm = new frmJoinGroup
+            {
+                currentUser = this.CurrentUser
+            };
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

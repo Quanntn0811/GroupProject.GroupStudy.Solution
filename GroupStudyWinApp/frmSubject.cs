@@ -29,6 +29,7 @@ namespace GroupStudyWinApp
             return new Subject
             {
                 SubjectId = txtSubjectID.Text,
+                SubjectName = txtSubjectName.Text,
                 Description = txtDescription.Text,
                 Status = Convert.ToBoolean(txtStatus.Text),
             };
@@ -43,10 +44,12 @@ namespace GroupStudyWinApp
                 source.DataSource = subjects;
 
                 txtSubjectID.DataBindings.Clear();
+                txtSubjectName.DataBindings.Clear();
                 txtDescription.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
 
                 txtSubjectID.DataBindings.Add("Text", source, "subjectId");
+                txtSubjectName.DataBindings.Add("Text", source, "subjectName");
                 txtDescription.DataBindings.Add("Text", source, "description");
                 txtStatus.DataBindings.Add("Text", source, "status");
 
@@ -81,7 +84,7 @@ namespace GroupStudyWinApp
         // Button Close => show a message for user choose to close form
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want close ?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to close?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -89,12 +92,12 @@ namespace GroupStudyWinApp
         // Button Add => show a form for fill data to add subject
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmSubjectDetail frmSubjectDetail = new frmSubjectDetail
+            frmSubjectDetail f = new frmSubjectDetail
             {
                 Text = "Add Subject",
                 isAdd = true,
             };
-            frmSubjectDetail.ShowDialog();
+            f.ShowDialog();
             LoadListSubject();
         }
         // Button Delete => delete row (subject) user choose in dgvSubject
@@ -118,6 +121,11 @@ namespace GroupStudyWinApp
             };
             frmSubjectDetail.ShowDialog();
             LoadListSubject();
+        }
+
+        private void frmSubject_Load(object sender, EventArgs e)
+        {
+            btnDelete.Enabled = false;
         }
     }
 }
