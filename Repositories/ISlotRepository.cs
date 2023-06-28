@@ -13,6 +13,6 @@ namespace Repositories
         void Add(Slot slot);
         void Update(Slot slot);
         void Delete(int id);
-
+        IEnumerable<Slot> GetSlotsByGroupId(int groupId);
     }
 }
