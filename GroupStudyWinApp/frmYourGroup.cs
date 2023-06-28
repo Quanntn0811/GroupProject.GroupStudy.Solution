@@ -61,8 +61,11 @@ namespace GroupStudyWinApp
 
                 dgvGroupList.DataSource = null;
                 dgvGroupList.DataSource = source;
+
                 dgvGroupList.Columns[4].Visible = false;
                 dgvGroupList.Columns[5].Visible = false;
+                dgvGroupList.Columns[6].Visible = false;
+                dgvGroupList.Columns[7].Visible = false;
 
                 if (list.Count() == 0)
                 {

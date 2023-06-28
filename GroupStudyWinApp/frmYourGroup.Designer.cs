@@ -80,6 +80,7 @@
             // 
             txtSize.Location = new Point(108, 131);
             txtSize.Name = "txtSize";
+            txtSize.ReadOnly = true;
             txtSize.Size = new Size(125, 27);
             txtSize.TabIndex = 3;
             // 
@@ -87,6 +88,7 @@
             // 
             txtStatus.Location = new Point(456, 128);
             txtStatus.Name = "txtStatus";
+            txtStatus.ReadOnly = true;
             txtStatus.Size = new Size(125, 27);
             txtStatus.TabIndex = 4;
             // 
@@ -94,6 +96,7 @@
             // 
             txtSubjectId.Location = new Point(456, 84);
             txtSubjectId.Name = "txtSubjectId";
+            txtSubjectId.ReadOnly = true;
             txtSubjectId.Size = new Size(125, 27);
             txtSubjectId.TabIndex = 5;
             // 
@@ -101,6 +104,7 @@
             // 
             txtGroupId.Location = new Point(108, 87);
             txtGroupId.Name = "txtGroupId";
+            txtGroupId.ReadOnly = true;
             txtGroupId.Size = new Size(125, 27);
             txtGroupId.TabIndex = 6;
             // 
@@ -153,6 +157,7 @@
             // 
             txtJoined.Location = new Point(108, 175);
             txtJoined.Name = "txtJoined";
+            txtJoined.ReadOnly = true;
             txtJoined.Size = new Size(125, 27);
             txtJoined.TabIndex = 11;
             // 
