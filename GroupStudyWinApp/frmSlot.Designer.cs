@@ -93,7 +93,7 @@
             // 
             // txtSlotIndex
             // 
-            txtSlotIndex.BackColor = Color.White;
+            txtSlotIndex.BackColor = SystemColors.Control;
             txtSlotIndex.Location = new Point(421, 60);
             txtSlotIndex.Name = "txtSlotIndex";
             txtSlotIndex.ReadOnly = true;
@@ -102,7 +102,7 @@
             // 
             // txtSlotID
             // 
-            txtSlotID.BackColor = Color.White;
+            txtSlotID.BackColor = SystemColors.Control;
             txtSlotID.Location = new Point(134, 60);
             txtSlotID.Name = "txtSlotID";
             txtSlotID.ReadOnly = true;
@@ -111,7 +111,7 @@
             // 
             // txtGroupID
             // 
-            txtGroupID.BackColor = Color.White;
+            txtGroupID.BackColor = SystemColors.Control;
             txtGroupID.Location = new Point(134, 101);
             txtGroupID.Name = "txtGroupID";
             txtGroupID.ReadOnly = true;
@@ -206,7 +206,7 @@
             // 
             // txtSlotName
             // 
-            txtSlotName.BackColor = Color.White;
+            txtSlotName.BackColor = SystemColors.Control;
             txtSlotName.Location = new Point(421, 101);
             txtSlotName.Name = "txtSlotName";
             txtSlotName.ReadOnly = true;

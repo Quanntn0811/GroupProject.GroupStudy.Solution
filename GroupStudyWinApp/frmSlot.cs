@@ -54,6 +54,9 @@ namespace GroupStudyWinApp
                 dgvSlotList.DataSource = null;
                 dgvSlotList.DataSource = source;
 
+                dgvSlotList.Columns[5].Visible = false;
+                dgvSlotList.Columns[6].Visible = false;
+
                 if (list.Count() != 0)
                 {
                     btnDelete.Enabled = true;
@@ -92,6 +95,9 @@ namespace GroupStudyWinApp
 
                 dgvSlotList.DataSource = null;
                 dgvSlotList.DataSource = source;
+
+                dgvSlotList.Columns[5].Visible = false;
+                dgvSlotList.Columns[6].Visible = false;
 
                 if (list.Count() != 0)
                 {

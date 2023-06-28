@@ -93,22 +93,28 @@
             // 
             // txtEmail
             // 
+            txtEmail.BackColor = SystemColors.Control;
             txtEmail.Location = new Point(124, 128);
             txtEmail.Name = "txtEmail";
+            txtEmail.ReadOnly = true;
             txtEmail.Size = new Size(250, 27);
             txtEmail.TabIndex = 18;
             // 
             // txtUsername
             // 
+            txtUsername.BackColor = SystemColors.Control;
             txtUsername.Location = new Point(509, 84);
             txtUsername.Name = "txtUsername";
+            txtUsername.ReadOnly = true;
             txtUsername.Size = new Size(250, 27);
             txtUsername.TabIndex = 17;
             // 
             // txtUserId
             // 
+            txtUserId.BackColor = SystemColors.Control;
             txtUserId.Location = new Point(124, 84);
             txtUserId.Name = "txtUserId";
+            txtUserId.ReadOnly = true;
             txtUserId.Size = new Size(250, 27);
             txtUserId.TabIndex = 16;
             // 
@@ -151,8 +157,10 @@
             // 
             // txtPwd
             // 
+            txtPwd.BackColor = SystemColors.Control;
             txtPwd.Location = new Point(509, 128);
             txtPwd.Name = "txtPwd";
+            txtPwd.ReadOnly = true;
             txtPwd.Size = new Size(250, 27);
             txtPwd.TabIndex = 25;
             // 
@@ -176,8 +184,10 @@
             // 
             // txtAddress
             // 
+            txtAddress.BackColor = SystemColors.Control;
             txtAddress.Location = new Point(509, 173);
             txtAddress.Name = "txtAddress";
+            txtAddress.ReadOnly = true;
             txtAddress.Size = new Size(250, 27);
             txtAddress.TabIndex = 29;
             // 
@@ -192,6 +202,7 @@
             // 
             // dtpkBirthday
             // 
+            dtpkBirthday.Enabled = false;
             dtpkBirthday.Location = new Point(124, 175);
             dtpkBirthday.Name = "dtpkBirthday";
             dtpkBirthday.Size = new Size(250, 27);
@@ -199,8 +210,10 @@
             // 
             // txtRole
             // 
+            txtRole.BackColor = SystemColors.Control;
             txtRole.Location = new Point(124, 219);
             txtRole.Name = "txtRole";
+            txtRole.ReadOnly = true;
             txtRole.Size = new Size(250, 27);
             txtRole.TabIndex = 32;
             // 
