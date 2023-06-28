@@ -40,9 +40,13 @@ public partial class GroupStudyContext : DbContext
     {
         modelBuilder.Entity<Comment>(entity =>
         {
-            entity.HasOne(d => d.StudyMaterial).WithMany(p => p.Comments).HasConstraintName("FK_Comment_StudyMaterial");
+            entity.HasOne(d => d.Group).WithMany(p => p.Comments)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Comment_Group");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Comments).HasConstraintName("FK_Comment_User");
+            entity.HasOne(d => d.User).WithMany(p => p.Comments)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Comment_User1");
         });
 
         modelBuilder.Entity<Group>(entity =>

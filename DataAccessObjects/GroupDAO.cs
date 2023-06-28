@@ -33,7 +33,7 @@ namespace DataAccessObjects
         public IEnumerable<Group> GetGroups() => _context.Groups.ToList();
 
         //Find
-        public Group Find(int id) => _context.Groups.FirstOrDefault(_ => _.GroupId == id);
+        public Group Find(int id) => _context.Groups.SingleOrDefault(x => x.GroupId == id);
 
         //AddNew
         public void Add(Group currentGroup)
