@@ -60,10 +60,10 @@ namespace GroupStudyWinApp
                 source = new BindingSource();
                 source.DataSource = listGroups;
 
+
                 txtGroupID.DataBindings.Clear();
                 txtSubjectID.DataBindings.Clear();
                 txtSize.DataBindings.Clear();
-                txtJoined.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
 
                 txtGroupID.DataBindings.Add("Text", source, "groupId");
@@ -81,6 +81,16 @@ namespace GroupStudyWinApp
                 }
                 else
                 {
+                    Group group = listGroups[0];
+                    if (group != null)
+                    {
+                        int join = repoParticipant.NumberStudentInGroup(group.GroupId);
+                        txtJoined.Text = join.ToString();
+                    }
+                    else
+                    {
+                        throw new Exception("Can not see joined");
+                    }
                     btnJoin.Enabled = true;
                 }
             }
