@@ -122,5 +122,11 @@ namespace GroupStudyWinApp
             LoadCurrentUser();
         }
 
+        private void manageSlotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSlot f = new frmSlot();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

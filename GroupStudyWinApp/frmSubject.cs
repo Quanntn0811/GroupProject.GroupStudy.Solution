@@ -56,6 +56,8 @@ namespace GroupStudyWinApp
                 dgvSubject.DataSource = null;
                 dgvSubject.DataSource = source;
 
+                dgvSubject.Columns[4].Visible = false;
+
                 if (subjects.Count() == 0)
                 {
                     ClearText();

@@ -97,6 +97,11 @@ namespace GroupStudyWinApp
                 dgvUserList.DataSource = null;
                 dgvUserList.DataSource = source;
 
+                dgvUserList.Columns[7].Visible = false;
+                dgvUserList.Columns[8].Visible = false;
+                dgvUserList.Columns[9].Visible = false;
+
+
                 if (list.Count() == 0)
                 {
                     ClearText();
@@ -130,7 +135,7 @@ namespace GroupStudyWinApp
                 UserInfo = GetUserObject(),
             };
 
-            if (f.ShowDialog() == DialogResult.OK )
+            if (f.ShowDialog() == DialogResult.OK)
             {
                 LoadUserList();
             }

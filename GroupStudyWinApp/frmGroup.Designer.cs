@@ -136,7 +136,7 @@
             // 
             // txtGroupID
             // 
-            txtGroupID.BackColor = Color.White;
+            txtGroupID.BackColor = SystemColors.Control;
             txtGroupID.Location = new Point(122, 75);
             txtGroupID.Name = "txtGroupID";
             txtGroupID.ReadOnly = true;
@@ -145,7 +145,7 @@
             // 
             // txtSubjectID
             // 
-            txtSubjectID.BackColor = Color.White;
+            txtSubjectID.BackColor = SystemColors.Control;
             txtSubjectID.Location = new Point(122, 116);
             txtSubjectID.Name = "txtSubjectID";
             txtSubjectID.ReadOnly = true;
@@ -154,7 +154,7 @@
             // 
             // txtSize
             // 
-            txtSize.BackColor = Color.White;
+            txtSize.BackColor = SystemColors.Control;
             txtSize.Location = new Point(418, 75);
             txtSize.Name = "txtSize";
             txtSize.ReadOnly = true;
