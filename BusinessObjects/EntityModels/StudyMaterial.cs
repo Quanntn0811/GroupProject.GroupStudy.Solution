@@ -32,9 +32,6 @@ public partial class StudyMaterial
     [Column("status")]
     public bool? Status { get; set; }
 
-    [InverseProperty("StudyMaterial")]
-    public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
-
     [ForeignKey("SlotId")]
     [InverseProperty("StudyMaterials")]
     public virtual Slot? Slot { get; set; }

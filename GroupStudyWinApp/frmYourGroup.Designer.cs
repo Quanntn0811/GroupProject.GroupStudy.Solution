@@ -41,6 +41,7 @@
             label5 = new Label();
             label6 = new Label();
             txtJoined = new TextBox();
+            btnGo = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvGroupList).BeginInit();
             SuspendLayout();
             // 
@@ -155,11 +156,22 @@
             txtJoined.Size = new Size(125, 27);
             txtJoined.TabIndex = 11;
             // 
+            // btnGo
+            // 
+            btnGo.Location = new Point(375, 201);
+            btnGo.Name = "btnGo";
+            btnGo.Size = new Size(94, 29);
+            btnGo.TabIndex = 13;
+            btnGo.Text = "Go";
+            btnGo.UseVisualStyleBackColor = true;
+            btnGo.Click += btnGo_Click;
+            // 
             // frmYourGroup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(610, 450);
+            Controls.Add(btnGo);
             Controls.Add(label6);
             Controls.Add(txtJoined);
             Controls.Add(label5);
@@ -196,5 +208,6 @@
         private Label label5;
         private Label label6;
         private TextBox txtJoined;
+        private Button btnGo;
     }
 }

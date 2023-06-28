@@ -16,6 +16,7 @@ namespace GroupStudyWinApp
     {
         IParticipantRepository participantRepo = new ParticipantRepository();
         IUserRepository userRepo = new UserRepository();
+        IGroupRepository groupRepo = new GroupRepository();
         BindingSource source;
         //---------------------------------------------------
         public frmYourGroup()
@@ -98,6 +99,17 @@ namespace GroupStudyWinApp
         {
             int joined = participantRepo.NumberStudentInGroup(Convert.ToInt32(txtGroupId.Text));
             txtJoined.Text = joined.ToString();
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            frmGroupStudy f = new frmGroupStudy
+            {
+                CurrentGroup = groupRepo.Find(Convert.ToInt32(txtGroupId.Text)),
+                CurrentUser = this.CurrentUser,
+            };
+
+            f.Show();
         }
     }
 }

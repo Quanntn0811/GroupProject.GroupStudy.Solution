@@ -13,8 +13,8 @@ public partial class Comment
     [Column("commentId")]
     public int CommentId { get; set; }
 
-    [Column("studyMaterialID")]
-    public int StudyMaterialId { get; set; }
+    [Column("groupID")]
+    public int GroupId { get; set; }
 
     [Column("userId")]
     public int UserId { get; set; }
@@ -22,9 +22,9 @@ public partial class Comment
     [Column("comment", TypeName = "text")]
     public string Comment1 { get; set; } = null!;
 
-    [ForeignKey("StudyMaterialId")]
+    [ForeignKey("GroupId")]
     [InverseProperty("Comments")]
-    public virtual StudyMaterial StudyMaterial { get; set; } = null!;
+    public virtual Group Group { get; set; } = null!;
 
     [ForeignKey("UserId")]
     [InverseProperty("Comments")]
