@@ -17,5 +17,7 @@ namespace Repositories
         public IEnumerable<Slot> GetSlots() => SlotDAO.Instance.GetSlots();
 
         public void Update(Slot slot) => SlotDAO.Instance.Update(slot);
+
+        public IEnumerable<Slot> GetSlotsByGroupId(int id) => SlotDAO.Instance.GetSlotsByGroupId(id);
     }
 }

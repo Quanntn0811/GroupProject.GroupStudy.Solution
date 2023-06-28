@@ -42,7 +42,7 @@
             dgvSlot.Name = "dgvSlot";
             dgvSlot.RowHeadersWidth = 51;
             dgvSlot.RowTemplate.Height = 29;
-            dgvSlot.Size = new Size(389, 212);
+            dgvSlot.Size = new Size(764, 175);
             dgvSlot.TabIndex = 0;
             // 
             // lbxComment
@@ -50,22 +50,22 @@
             lbxComment.BorderStyle = BorderStyle.None;
             lbxComment.FormattingEnabled = true;
             lbxComment.ItemHeight = 20;
-            lbxComment.Location = new Point(418, 12);
+            lbxComment.Location = new Point(12, 212);
             lbxComment.Name = "lbxComment";
             lbxComment.RightToLeft = RightToLeft.No;
-            lbxComment.Size = new Size(370, 380);
+            lbxComment.Size = new Size(380, 180);
             lbxComment.TabIndex = 1;
             // 
             // txtComment
             // 
-            txtComment.Location = new Point(418, 411);
+            txtComment.Location = new Point(12, 409);
             txtComment.Name = "txtComment";
             txtComment.Size = new Size(270, 27);
             txtComment.TabIndex = 2;
             // 
             // btnComment
             // 
-            btnComment.Location = new Point(694, 409);
+            btnComment.Location = new Point(298, 409);
             btnComment.Name = "btnComment";
             btnComment.Size = new Size(94, 29);
             btnComment.TabIndex = 3;

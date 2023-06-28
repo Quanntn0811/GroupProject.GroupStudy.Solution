@@ -29,9 +29,15 @@ namespace DataAccessObjects
                 return instance;
             }
         }
+        //----------------------------------------------------
+        // Get slots
         public List<Slot> GetSlots() => _context.Slots.ToList();
 
         private Slot Find(int id) => _context.Slots.FirstOrDefault(x => x.SlotId == id);
+        // Get slots by groupId
+        public List<Slot> GetSlotsByGroupId(int id) => _context.Slots.Where(x => x.GroupId == id).ToList();
+
+        //----------------------------------------------------
 
         private Boolean isExistSlotIndex(Slot slot) 
             =>_context.Slots.FirstOrDefault(x => x.GroupId == slot.GroupId && x.SlotIndex == slot.SlotIndex) == null ? true : false;

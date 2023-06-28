@@ -36,7 +36,7 @@ namespace GroupStudyWinApp
         //-----------------------------------------
         private void LoadCommentList()
         {
-            var list = CommentDAO.Instance.GetCommentsByGroupId(1);
+            var list = CommentDAO.Instance.GetCommentsByGroupId(CurrentGroup.GroupId);
             foreach (var item in list)
             {
                 if (item.UserId == CurrentUser.UserId)
@@ -54,7 +54,7 @@ namespace GroupStudyWinApp
 
         private void LoadSlotList()
         {
-            var list = slotRepo.GetSlots();
+            var list = slotRepo.GetSlotsByGroupId(CurrentGroup.GroupId);
             try
             {
                 source = new BindingSource();
@@ -63,6 +63,13 @@ namespace GroupStudyWinApp
                 dgvSlot.DataSource = null;
                 dgvSlot.DataSource = list;
 
+                dgvSlot.Columns[0].Visible = false;
+                dgvSlot.Columns[1].Visible = false;
+                dgvSlot.Columns[4].Visible = false;
+                dgvSlot.Columns[5].Visible = false;
+                dgvSlot.Columns[6].Visible = false;
+
+                dgvSlot.Columns[3].Width = 500;
             }
             catch (Exception ex)
             {
