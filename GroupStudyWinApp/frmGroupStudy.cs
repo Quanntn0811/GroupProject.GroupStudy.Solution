@@ -25,6 +25,7 @@ namespace GroupStudyWinApp
         }
         public Group CurrentGroup { get; set; }
         public User CurrentUser { get; set; }
+        public Slot SlotObject { get; set; }
         //-----------------------------------------
         private void frmGroupStudy_Load(object sender, EventArgs e)
         {
@@ -95,6 +96,33 @@ namespace GroupStudyWinApp
                 txtComment.Text = string.Empty;
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult d = MessageBox.Show("Are you sure you want to close.", "Notification"
+                , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (d == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        private void btnStudy_Click(object sender, EventArgs e)
+        {
+            frmStudyMaterial f = new frmStudyMaterial
+            {
+                CurrentSlot = SlotObject
+            };
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                LoadCommentList();
+                LoadSlotList();
+                lbxComment.HorizontalScrollbar = true;
+            }
+        }
+
 
     }
 }

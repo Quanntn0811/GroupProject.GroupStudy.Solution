@@ -32,6 +32,9 @@
             lbxComment = new ListBox();
             txtComment = new TextBox();
             btnComment = new Button();
+            btnStudy = new Button();
+            btnClose = new Button();
+            txtSlotId = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvSlot).BeginInit();
             SuspendLayout();
             // 
@@ -73,11 +76,41 @@
             btnComment.UseVisualStyleBackColor = true;
             btnComment.Click += btnComment_Click;
             // 
+            // btnStudy
+            // 
+            btnStudy.Location = new Point(556, 212);
+            btnStudy.Name = "btnStudy";
+            btnStudy.Size = new Size(94, 29);
+            btnStudy.TabIndex = 4;
+            btnStudy.Text = "Study";
+            btnStudy.UseVisualStyleBackColor = true;
+            btnStudy.Click += btnStudy_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.Location = new Point(682, 212);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(94, 29);
+            btnClose.TabIndex = 5;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
+            // txtSlotId
+            // 
+            txtSlotId.Location = new Point(766, 409);
+            txtSlotId.Name = "txtSlotId";
+            txtSlotId.Size = new Size(10, 27);
+            txtSlotId.TabIndex = 6;
+            // 
             // frmGroupStudy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtSlotId);
+            Controls.Add(btnClose);
+            Controls.Add(btnStudy);
             Controls.Add(btnComment);
             Controls.Add(txtComment);
             Controls.Add(lbxComment);
@@ -97,5 +130,8 @@
         private ListBox lbxComment;
         private TextBox txtComment;
         private Button btnComment;
+        private Button btnStudy;
+        private Button btnClose;
+        private TextBox txtSlotId;
     }
 }
