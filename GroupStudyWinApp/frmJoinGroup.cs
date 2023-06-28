@@ -74,6 +74,11 @@ namespace GroupStudyWinApp
                 dgvJoinGroup.DataSource = null;
                 dgvJoinGroup.DataSource = source;
 
+                dgvJoinGroup.Columns[4].Visible = false;
+                dgvJoinGroup.Columns[5].Visible = false;
+                dgvJoinGroup.Columns[6].Visible = false;
+                dgvJoinGroup.Columns[7].Visible = false;
+
                 if (listGroups.Count() == 0)
                 {
                     ClearText();
