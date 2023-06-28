@@ -6,19 +6,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessObjects.EntityModels;
 
-[Keyless]
+[PrimaryKey("UserId", "GroupId")]
 [Table("Participant")]
 public partial class Participant
 {
+    [Key]
     [Column("userId")]
-    public int? UserId { get; set; }
+    public int UserId { get; set; }
 
+    [Key]
     [Column("groupId")]
-    public int? GroupId { get; set; }
+    public int GroupId { get; set; }
+
+    [Column("status")]
+    public bool? Status { get; set; }
 
     [ForeignKey("GroupId")]
-    public virtual Group? Group { get; set; }
+    [InverseProperty("Participants")]
+    public virtual Group Group { get; set; } = null!;
 
     [ForeignKey("UserId")]
-    public virtual User? User { get; set; }
+    [InverseProperty("Participants")]
+    public virtual User User { get; set; } = null!;
 }

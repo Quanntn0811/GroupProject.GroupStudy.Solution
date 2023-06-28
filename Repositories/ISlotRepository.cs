@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public interface IUserRepository
+    public interface ISlotRepository
     {
-        IEnumerable<User> GetUsers();
-        void AddNew(User user);
-        void Update(User user);
+        IEnumerable<Slot> GetSlots();
+        void Add(Slot slot);
+        void Update(Slot slot);
         void Delete(int id);
-        User GetUserById(int id);
+
     }
 }

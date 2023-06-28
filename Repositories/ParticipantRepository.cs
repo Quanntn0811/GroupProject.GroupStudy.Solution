@@ -19,5 +19,9 @@ namespace Repositories
         List<Participant> IParticipantRepository.GetParticipants() => ParticipantDAO.Instance.GetParticipants();
 
         int IParticipantRepository.NumberStudentInGroup(int groupID) => ParticipantDAO.Instance.NumberStudentInGroup(groupID);
+
+        List<User> IParticipantRepository.GetListUserInGroup(int groupID) => ParticipantDAO.Instance.GetListUserInGroup(groupID);
+
+        public List<Group> GetListByUserId(int userId) => ParticipantDAO.Instance.GetListByUserId(userId);
     }
 }

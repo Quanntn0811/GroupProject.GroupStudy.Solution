@@ -170,6 +170,7 @@
             btnJoin.TabIndex = 14;
             btnJoin.Text = "Join";
             btnJoin.UseVisualStyleBackColor = true;
+            btnJoin.Click += btnJoin_Click;
             // 
             // btnClose
             // 

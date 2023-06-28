@@ -84,6 +84,7 @@
             dgvGroupList.RowTemplate.Height = 29;
             dgvGroupList.Size = new Size(542, 217);
             dgvGroupList.TabIndex = 4;
+            dgvGroupList.CellDoubleClick += dgvGroupList_CellDoubleClick;
             // 
             // lbStatus
             // 

@@ -40,17 +40,9 @@ namespace DataAccessObjects
         }
         // add Participant
         public void AddParticipant(Participant participant)
-        {
-            var p = _context.Participants.SingleOrDefault(p => p.GroupId == participant.GroupId && p.UserId == participant.UserId);
-            if (p != null)
-            {
+        {   
                 _context.Participants.Add(participant);
-                _context.SaveChanges();
-            } else
-            {
-                throw new Exception("Can not add participant");
-            }
-            
+                _context.SaveChanges();          
         }
         // Update Participant
         //public void UpdateParticipant(Participant participant)
@@ -64,12 +56,29 @@ namespace DataAccessObjects
             var p = _context.Participants.SingleOrDefault(p => p.GroupId == participant.GroupId && p.UserId == participant.UserId);
             if (p != null)
             {
+                _context.ChangeTracker.Clear();
                 _context.Participants.Remove(participant);
                 _context.SaveChanges();
-            } else
+            }
+            else
             {
-                throw new Exception("Can not delete particpant");
+                throw new Exception("Participant does not exist.");
             }
         }
+    
+        //Get listUser in Group
+        public List<User> GetListUserInGroup(int groupID)
+        {
+            var list = _context.Participants.Where(x => x.GroupId == groupID).Select(x => x.User).ToList();
+            return list;
+        }
+
+        //  Get group by userId
+        public List<Group> GetListByUserId(int userId)
+        {
+            var list = _context.Participants.Where(x => x.UserId == userId).Select(x => x.Group).ToList(); 
+            return list;
+        }
+
     }
 }
