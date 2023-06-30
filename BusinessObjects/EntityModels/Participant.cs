@@ -19,7 +19,7 @@ public partial class Participant
     public int GroupId { get; set; }
 
     [Column("status")]
-    public bool? Status { get; set; }
+    public int Status { get; set; }
 
     [ForeignKey("GroupId")]
     [InverseProperty("Participants")]

@@ -24,7 +24,7 @@ public partial class Subject
     public string? Description { get; set; }
 
     [Column("status")]
-    public bool? Status { get; set; }
+    public bool Status { get; set; }
 
     [InverseProperty("Subject")]
     public virtual ICollection<Group> Groups { get; set; } = new List<Group>();

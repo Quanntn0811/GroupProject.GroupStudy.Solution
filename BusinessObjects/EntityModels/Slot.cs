@@ -27,7 +27,7 @@ public partial class Slot
     public string? SlotName { get; set; }
 
     [Column("status")]
-    public bool? Status { get; set; }
+    public bool Status { get; set; }
 
     [ForeignKey("GroupId")]
     [InverseProperty("Slots")]

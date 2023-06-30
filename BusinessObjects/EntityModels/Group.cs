@@ -22,7 +22,7 @@ public partial class Group
     public int? Size { get; set; }
 
     [Column("status")]
-    public bool? Status { get; set; }
+    public bool Status { get; set; }
 
     [InverseProperty("Group")]
     public virtual ICollection<Comment> Comments { get; set; } = new List<Comment>();
