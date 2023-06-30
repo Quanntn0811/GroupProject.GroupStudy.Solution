@@ -33,13 +33,14 @@
             manageSubjectToolStripMenuItem = new ToolStripMenuItem();
             manageGroupToolStripMenuItem = new ToolStripMenuItem();
             manageUserToolStripMenuItem = new ToolStripMenuItem();
+            manageSlotToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             groupToolStripMenuItem = new ToolStripMenuItem();
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
             myGroupToolStripMenuItem = new ToolStripMenuItem();
             profileToolStripMenuItem = new ToolStripMenuItem();
-            manageSlotToolStripMenuItem = new ToolStripMenuItem();
+            manageParticipantToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem, manageSlotToolStripMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem, manageSlotToolStripMenuItem, manageParticipantToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -80,6 +81,13 @@
             manageUserToolStripMenuItem.Size = new Size(224, 26);
             manageUserToolStripMenuItem.Text = "Manage User";
             manageUserToolStripMenuItem.Click += manageUserToolStripMenuItem_Click;
+            // 
+            // manageSlotToolStripMenuItem
+            // 
+            manageSlotToolStripMenuItem.Name = "manageSlotToolStripMenuItem";
+            manageSlotToolStripMenuItem.Size = new Size(224, 26);
+            manageSlotToolStripMenuItem.Text = "Manage Slot";
+            manageSlotToolStripMenuItem.Click += manageSlotToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -107,14 +115,14 @@
             // joinGroupToolStripMenuItem
             // 
             joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
-            joinGroupToolStripMenuItem.Size = new Size(166, 26);
+            joinGroupToolStripMenuItem.Size = new Size(163, 26);
             joinGroupToolStripMenuItem.Text = "Join Group";
             joinGroupToolStripMenuItem.Click += joinGroupToolStripMenuItem_Click;
             // 
             // myGroupToolStripMenuItem
             // 
             myGroupToolStripMenuItem.Name = "myGroupToolStripMenuItem";
-            myGroupToolStripMenuItem.Size = new Size(224, 26);
+            myGroupToolStripMenuItem.Size = new Size(163, 26);
             myGroupToolStripMenuItem.Text = "My Group";
             myGroupToolStripMenuItem.Click += myGroupToolStripMenuItem_Click;
             // 
@@ -125,12 +133,12 @@
             profileToolStripMenuItem.Text = "Profile";
             profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
             // 
-            // manageSlotToolStripMenuItem
+            // manageParticipantToolStripMenuItem
             // 
-            manageSlotToolStripMenuItem.Name = "manageSlotToolStripMenuItem";
-            manageSlotToolStripMenuItem.Size = new Size(224, 26);
-            manageSlotToolStripMenuItem.Text = "Manage Slot";
-            manageSlotToolStripMenuItem.Click += manageSlotToolStripMenuItem_Click;
+            manageParticipantToolStripMenuItem.Name = "manageParticipantToolStripMenuItem";
+            manageParticipantToolStripMenuItem.Size = new Size(224, 26);
+            manageParticipantToolStripMenuItem.Text = "Manage Participant";
+            manageParticipantToolStripMenuItem.Click += manageParticipantToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -164,5 +172,6 @@
         private ToolStripMenuItem joinGroupToolStripMenuItem;
         private ToolStripMenuItem myGroupToolStripMenuItem;
         private ToolStripMenuItem manageSlotToolStripMenuItem;
+        private ToolStripMenuItem manageParticipantToolStripMenuItem;
     }
 }

@@ -44,13 +44,20 @@ namespace DataAccessObjects
                 _context.Participants.Add(participant);
                 _context.SaveChanges();          
         }
-        // Update Participant
-        //public void UpdateParticipant(Participant participant)
-        //{
-        //    _context.ChangeTracker.Clear();
-        //    _context.Participants.Update(participant);
-        //    _context.SaveChanges();
-        //}
+        // Update status participant by userID, groupID
+        public void UpdateParticipant(int userID, int groupID, int status)
+        {
+            Participant partcipant = _context.Participants.SingleOrDefault(p => p.UserId == userID && p.GroupId == groupID);
+            if (partcipant != null)
+            {
+                partcipant.Status = status;
+                _context.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Can not update participant");
+            }
+        }
         public void DeleteParticipant(Participant participant)
         {
             var p = _context.Participants.SingleOrDefault(p => p.GroupId == participant.GroupId && p.UserId == participant.UserId);
@@ -79,6 +86,17 @@ namespace DataAccessObjects
             var list = _context.Participants.Where(x => x.UserId == userId).Select(x => x.Group).ToList(); 
             return list;
         }
-
+        // Get list participant Peding by GroupID
+        public List<Participant> GetParticipantsInGroupPeding(int groupID, int status)
+        {
+            var list = _context.Participants.Where(p => p.GroupId == groupID && p.Status == status).ToList();
+            return list;
+        }
+        // Get list participant accepted by GroupID
+        public List<Participant> GetParticipantsInGroupAccepted(int groupID, int status)
+        {
+            var list = _context.Participants.Where(p => p.GroupId == groupID && p.Status != status).ToList();
+            return list;
+        }
     }
 }

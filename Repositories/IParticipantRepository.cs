@@ -16,5 +16,8 @@ namespace Repositories
         void DeleteParticipant(Participant participant);
         List<User> GetListUserInGroup(int groupID);
         List<Group> GetListByUserId(int userId);
+        List<Participant> GetParticipantsInGroupPending(int groupID, int status);
+        List<Participant> GetParticipantsInGroupAccepted(int groupID, int status);
+        void UpdateParticipant(int userID, int groupID, int status);
     }
 }
