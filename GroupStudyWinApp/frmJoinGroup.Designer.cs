@@ -40,7 +40,6 @@
             txtSize = new TextBox();
             txtStatus = new TextBox();
             dgvJoinGroup = new DataGridView();
-            btnLoad = new Button();
             btnJoin = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvJoinGroup).BeginInit();
@@ -152,16 +151,6 @@
             dgvJoinGroup.TabIndex = 12;
             dgvJoinGroup.CellMouseClick += dgvJoinGroup_CellMouseClick;
             // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(551, 250);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 13;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
-            // 
             // btnJoin
             // 
             btnJoin.Location = new Point(551, 330);
@@ -189,7 +178,6 @@
             ClientSize = new Size(685, 450);
             Controls.Add(btnClose);
             Controls.Add(btnJoin);
-            Controls.Add(btnLoad);
             Controls.Add(dgvJoinGroup);
             Controls.Add(txtStatus);
             Controls.Add(txtSize);
@@ -224,7 +212,6 @@
         private TextBox txtSize;
         private TextBox txtStatus;
         private DataGridView dgvJoinGroup;
-        private Button btnLoad;
         private Button btnJoin;
         private Button btnClose;
     }

@@ -114,14 +114,9 @@ namespace GroupStudyWinApp
             }
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadUnjoinedGroup();
-        }
-
         private void frmJoinGroup_Load(object sender, EventArgs e)
         {
-            btnJoin.Enabled = false;
+            LoadUnjoinedGroup();
         }
 
         private void dgvJoinGroup_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

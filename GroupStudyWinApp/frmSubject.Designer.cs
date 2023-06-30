@@ -37,7 +37,6 @@
             txtStatus = new TextBox();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             dgvSubject = new DataGridView();
-            btnLoad = new Button();
             btnAdd = new Button();
             btnDelete = new Button();
             btnClose = new Button();
@@ -124,19 +123,9 @@
             dgvSubject.TabIndex = 7;
             dgvSubject.CellDoubleClick += dgvSubject_CellDoubleClick;
             // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(679, 198);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 8;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
-            // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(679, 268);
+            btnAdd.Location = new Point(676, 198);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 9;
@@ -146,7 +135,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(679, 330);
+            btnDelete.Location = new Point(676, 260);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 10;
@@ -156,7 +145,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(679, 390);
+            btnClose.Location = new Point(676, 320);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 11;
@@ -191,7 +180,6 @@
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
-            Controls.Add(btnLoad);
             Controls.Add(dgvSubject);
             Controls.Add(txtStatus);
             Controls.Add(txtDescription);
@@ -220,7 +208,6 @@
         private TextBox txtStatus;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private DataGridView dgvSubject;
-        private Button btnLoad;
         private Button btnAdd;
         private Button btnDelete;
         private Button btnClose;

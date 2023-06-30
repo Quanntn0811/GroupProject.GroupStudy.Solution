@@ -26,11 +26,6 @@ namespace GroupStudyWinApp
 
         private void frmGroup_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
-        }
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
             LoadGroupList();
         }
         private void LoadGroupList()
@@ -58,12 +53,7 @@ namespace GroupStudyWinApp
                 dgvGroupList.Columns[5].Visible = false;
                 dgvGroupList.Columns[6].Visible = false;
                 dgvGroupList.Columns[7].Visible = false;
-                if (list.Count() != 0)
-                {
-                    btnDelete.Enabled = true;
-                    btnUpdate.Enabled = true;
-                }
-                else
+                if (list.Count() == 0)
                 {
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -71,7 +61,7 @@ namespace GroupStudyWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error on load list of Group");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -95,12 +85,7 @@ namespace GroupStudyWinApp
                 dgvGroupList.DataSource = null;
                 dgvGroupList.DataSource = source;
 
-                if (list.Count() != 0)
-                {
-                    btnDelete.Enabled = true;
-                    btnUpdate.Enabled = true;
-                }
-                else
+                if (list.Count() == 0)
                 {
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
@@ -205,51 +190,5 @@ namespace GroupStudyWinApp
             }
         }
 
-        //private void loadOption()
-        //{
-        //    try
-        //    {
-        //        loadSubject();
-
-        //        cbOption.DataSource = listOption;
-        //        cbOption.DisplayMember = "Key";
-        //        cbOption.ValueMember = "Value";
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        //List<KeyValuePair<string, int>> listOption = new List<KeyValuePair<string, int>>();
-        //private void loadSubject()
-        //{
-        //    listOption.Add(new KeyValuePair<string, int>("All Subject", 0));
-        //    int count = 1;
-        //    foreach (var item in repo.GetSubjects())
-        //    {
-        //        listOption.Add(new KeyValuePair<string, int>(item.SubjectId.ToString(), count++));
-        //    }
-        //}
-        //private void cbOption_SelectedValueChanged(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        if (cbOption != null)
-        //        {
-        //            string option = cbOption.SelectedValue.ToString();
-        //            if (!option.Contains("All Subject"))
-        //            {
-        //                var list = (IEnumerable<Group>)repo.GetGroups().Where(x => option.Contains(x.SubjectId));
-        //                LoadGroupList(list);
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-        //}
     }
 }

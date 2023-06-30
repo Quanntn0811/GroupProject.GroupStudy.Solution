@@ -70,7 +70,6 @@
             // btnDelete
             // 
             btnDelete.Location = new Point(590, 258);
-
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 3;
@@ -107,6 +106,7 @@
             // 
             // dtpkBirthday
             // 
+            dtpkBirthday.Enabled = false;
             dtpkBirthday.Location = new Point(104, 128);
             dtpkBirthday.Name = "dtpkBirthday";
             dtpkBirthday.Size = new Size(250, 27);

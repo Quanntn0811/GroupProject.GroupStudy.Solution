@@ -63,10 +63,6 @@ namespace GroupStudyWinApp
                     ClearText();
                     btnDelete.Enabled = false;
                 }
-                else
-                {
-                    btnDelete.Enabled = true;
-                }
             }
             catch (Exception ex)
             {
@@ -77,11 +73,6 @@ namespace GroupStudyWinApp
         public frmSubject()
         {
             InitializeComponent();
-        }
-        // Button Load => show all subject in dgvSubject
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadListSubject();
         }
         // Button Close => show a message for user choose to close form
         private void btnClose_Click(object sender, EventArgs e)
@@ -127,7 +118,7 @@ namespace GroupStudyWinApp
 
         private void frmSubject_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
+            LoadListSubject();
         }
     }
 }

@@ -25,8 +25,7 @@ namespace GroupStudyWinApp
 
         private void frmUser_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
+            LoadUserList();
         }
         //-----------------------------------------------------
         // Clear text in textbox
@@ -108,11 +107,6 @@ namespace GroupStudyWinApp
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                 }
-                else
-                {
-                    btnDelete.Enabled = true;
-                    btnUpdate.Enabled = true;
-                }
             }
             catch (Exception ex)
             {
@@ -121,10 +115,6 @@ namespace GroupStudyWinApp
         }
 
         //-----------------------------------------------------
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadUserList();
-        }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {

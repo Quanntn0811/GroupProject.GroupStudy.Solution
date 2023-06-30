@@ -37,7 +37,6 @@
             txtGroupID = new TextBox();
             btnClose = new Button();
             btnDelete = new Button();
-            btnLoad = new Button();
             lbStatus = new Label();
             lbSlotIndex = new Label();
             dgvSlotList = new DataGridView();
@@ -63,7 +62,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(613, 296);
+            btnUpdate.Location = new Point(611, 248);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 124;
@@ -73,7 +72,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(613, 247);
+            btnAdd.Location = new Point(611, 199);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 123;
@@ -120,7 +119,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(613, 387);
+            btnClose.Location = new Point(611, 339);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 118;
@@ -130,23 +129,13 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(613, 341);
+            btnDelete.Location = new Point(611, 293);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 117;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
-            // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(613, 199);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 116;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
             // 
             // lbStatus
             // 
@@ -238,7 +227,6 @@
             Controls.Add(txtGroupID);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
-            Controls.Add(btnLoad);
             Controls.Add(lbStatus);
             Controls.Add(lbSlotIndex);
             Controls.Add(dgvSlotList);
@@ -264,7 +252,6 @@
         private TextBox txtGroupID;
         private Button btnClose;
         private Button btnDelete;
-        private Button btnLoad;
         private Label lbStatus;
         private Label lbSlotIndex;
         private DataGridView dgvSlotList;
