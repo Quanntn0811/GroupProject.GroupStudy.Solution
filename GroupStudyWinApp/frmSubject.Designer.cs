@@ -120,13 +120,13 @@
             dgvSubject.Name = "dgvSubject";
             dgvSubject.RowHeadersWidth = 51;
             dgvSubject.RowTemplate.Height = 29;
-            dgvSubject.Size = new Size(633, 221);
+            dgvSubject.Size = new Size(555, 221);
             dgvSubject.TabIndex = 7;
             dgvSubject.CellDoubleClick += dgvSubject_CellDoubleClick;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(692, 195);
+            btnLoad.Location = new Point(679, 198);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(94, 29);
             btnLoad.TabIndex = 8;
@@ -136,7 +136,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(692, 265);
+            btnAdd.Location = new Point(679, 268);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 9;
@@ -146,7 +146,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(692, 327);
+            btnDelete.Location = new Point(679, 330);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 10;
@@ -156,7 +156,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(692, 387);
+            btnClose.Location = new Point(679, 390);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 11;
@@ -169,9 +169,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(432, 98);
             label5.Name = "label5";
-            label5.Size = new Size(102, 20);
+            label5.Size = new Size(49, 20);
             label5.TabIndex = 12;
-            label5.Text = "Subject Name";
+            label5.Text = "Name";
             // 
             // txtSubjectName
             // 

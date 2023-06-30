@@ -39,6 +39,7 @@
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
             myGroupToolStripMenuItem = new ToolStripMenuItem();
             profileToolStripMenuItem = new ToolStripMenuItem();
+            manageSlotToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem, manageSlotToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -62,21 +63,21 @@
             // manageSubjectToolStripMenuItem
             // 
             manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
-            manageSubjectToolStripMenuItem.Size = new Size(199, 26);
+            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
             manageSubjectToolStripMenuItem.Text = "Manage Subject";
             manageSubjectToolStripMenuItem.Click += manageSubjectToolStripMenuItem_Click;
             // 
             // manageGroupToolStripMenuItem
             // 
             manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
-            manageGroupToolStripMenuItem.Size = new Size(199, 26);
+            manageGroupToolStripMenuItem.Size = new Size(224, 26);
             manageGroupToolStripMenuItem.Text = "Manage Group";
             manageGroupToolStripMenuItem.Click += manageGroupToolStripMenuItem_Click;
             // 
             // manageUserToolStripMenuItem
             // 
             manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
-            manageUserToolStripMenuItem.Size = new Size(199, 26);
+            manageUserToolStripMenuItem.Size = new Size(224, 26);
             manageUserToolStripMenuItem.Text = "Manage User";
             manageUserToolStripMenuItem.Click += manageUserToolStripMenuItem_Click;
             // 
@@ -106,7 +107,7 @@
             // joinGroupToolStripMenuItem
             // 
             joinGroupToolStripMenuItem.Name = "joinGroupToolStripMenuItem";
-            joinGroupToolStripMenuItem.Size = new Size(224, 26);
+            joinGroupToolStripMenuItem.Size = new Size(166, 26);
             joinGroupToolStripMenuItem.Text = "Join Group";
             joinGroupToolStripMenuItem.Click += joinGroupToolStripMenuItem_Click;
             // 
@@ -123,6 +124,13 @@
             profileToolStripMenuItem.Size = new Size(66, 24);
             profileToolStripMenuItem.Text = "Profile";
             profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
+            // 
+            // manageSlotToolStripMenuItem
+            // 
+            manageSlotToolStripMenuItem.Name = "manageSlotToolStripMenuItem";
+            manageSlotToolStripMenuItem.Size = new Size(224, 26);
+            manageSlotToolStripMenuItem.Text = "Manage Slot";
+            manageSlotToolStripMenuItem.Click += manageSlotToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -155,5 +163,6 @@
         private ToolStripMenuItem groupToolStripMenuItem;
         private ToolStripMenuItem joinGroupToolStripMenuItem;
         private ToolStripMenuItem myGroupToolStripMenuItem;
+        private ToolStripMenuItem manageSlotToolStripMenuItem;
     }
 }
