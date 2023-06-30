@@ -128,5 +128,12 @@ namespace GroupStudyWinApp
             f.MdiParent = this;
             f.Show();
         }
+
+        private void manageParticipantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmParticipant frmParticipant = new frmParticipant();
+            frmParticipant.MdiParent = this;
+            frmParticipant.Show();
+        }
     }
 }
