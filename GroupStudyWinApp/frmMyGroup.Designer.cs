@@ -1,6 +1,6 @@
 ﻿namespace GroupStudyWinApp
 {
-    partial class frmYourGroup
+    partial class frmMyGroup
     {
         /// <summary>
         /// Required designer variable.
@@ -54,17 +54,18 @@
             dgvGroupList.RowTemplate.Height = 29;
             dgvGroupList.Size = new Size(552, 188);
             dgvGroupList.TabIndex = 0;
+            dgvGroupList.CellDoubleClick += dgvGroupList_CellDoubleClick;
             dgvGroupList.CellMouseClick += dgvGroupList_CellMouseClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(190, 9);
+            label1.Location = new Point(206, 9);
             label1.Name = "label1";
-            label1.Size = new Size(220, 50);
+            label1.Size = new Size(196, 50);
             label1.TabIndex = 1;
-            label1.Text = "Your Group";
+            label1.Text = "My Group";
             // 
             // btnOut
             // 
@@ -171,7 +172,7 @@
             btnGo.UseVisualStyleBackColor = true;
             btnGo.Click += btnGo_Click;
             // 
-            // frmYourGroup
+            // frmMyGroup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -190,8 +191,8 @@
             Controls.Add(btnOut);
             Controls.Add(label1);
             Controls.Add(dgvGroupList);
-            Name = "frmYourGroup";
-            Text = "Your Group";
+            Name = "frmMyGroup";
+            Text = "My Group";
             Load += frmYourGroup_Load;
             ((System.ComponentModel.ISupportInitialize)dgvGroupList).EndInit();
             ResumeLayout(false);

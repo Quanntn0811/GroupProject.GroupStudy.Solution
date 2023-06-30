@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace GroupStudyWinApp
 {
-    public partial class frmYourGroup : Form
+    public partial class frmMyGroup : Form
     {
         IParticipantRepository participantRepo = new ParticipantRepository();
         IUserRepository userRepo = new UserRepository();
         IGroupRepository groupRepo = new GroupRepository();
         BindingSource source;
         //---------------------------------------------------
-        public frmYourGroup()
+        public frmMyGroup()
         {
             InitializeComponent();
         }
@@ -105,6 +105,17 @@ namespace GroupStudyWinApp
         }
 
         private void btnGo_Click(object sender, EventArgs e)
+        {
+            frmGroupStudy f = new frmGroupStudy
+            {
+                CurrentGroup = groupRepo.Find(Convert.ToInt32(txtGroupId.Text)),
+                CurrentUser = this.CurrentUser,
+            };
+
+            f.Show();
+        }
+
+        private void dgvGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             frmGroupStudy f = new frmGroupStudy
             {

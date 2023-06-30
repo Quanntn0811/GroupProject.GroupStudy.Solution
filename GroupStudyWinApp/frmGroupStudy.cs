@@ -17,6 +17,7 @@ namespace GroupStudyWinApp
     {
         ICommentRepository commentRepo = new CommentRepository();
         ISlotRepository slotRepo = new SlotRepository();
+        IStudyMaterialRepository studyMRepo = new StudyMaterialRepository();
         BindingSource source = new BindingSource();
         //-----------------------------------------
         public frmGroupStudy()
@@ -32,9 +33,21 @@ namespace GroupStudyWinApp
             LoadCommentList();
             LoadSlotList();
             lbxComment.HorizontalScrollbar = true;
+            dgvSlot.CellDoubleClick += dgvSlot_CellDoubleClick;
         }
 
         //-----------------------------------------
+        public void LoadStudyMaterialList(int slotId)
+        {
+            var list = studyMRepo.GetStudyMaterialsByID(slotId);
+            int i = 1;
+            foreach (var item in list)
+            {
+                rtxtContent.AppendText($"{i++}. " + item.Title + "\n", Color.Black);
+                rtxtContent.AppendText(item.Content + "\n\n");
+            }
+        }
+
         private void LoadCommentList()
         {
             var list = CommentDAO.Instance.GetCommentsByGroupId(CurrentGroup.GroupId);
@@ -64,13 +77,19 @@ namespace GroupStudyWinApp
                 dgvSlot.DataSource = null;
                 dgvSlot.DataSource = list;
 
-                dgvSlot.Columns[0].Visible = false;
                 dgvSlot.Columns[1].Visible = false;
                 dgvSlot.Columns[4].Visible = false;
                 dgvSlot.Columns[5].Visible = false;
                 dgvSlot.Columns[6].Visible = false;
 
-                dgvSlot.Columns[3].Width = 500;
+                dgvSlot.Columns[2].Width = 50;
+                dgvSlot.Columns[2].HeaderText = "Index";
+                dgvSlot.Columns[3].Width = 300;
+                dgvSlot.Columns[3].HeaderText = "Name";
+
+                DataGridViewColumn column = dgvSlot.Columns[0];
+                column.DisplayIndex = 3;
+                dgvSlot.Refresh();
             }
             catch (Exception ex)
             {
@@ -108,21 +127,19 @@ namespace GroupStudyWinApp
             }
         }
 
-        private void btnStudy_Click(object sender, EventArgs e)
+        private void dgvSlot_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            frmStudyMaterial f = new frmStudyMaterial
-            {
-                CurrentSlot = SlotObject
-            };
 
-            if (f.ShowDialog() == DialogResult.OK)
-            {
-                LoadCommentList();
-                LoadSlotList();
-                lbxComment.HorizontalScrollbar = true;
-            }
         }
 
-
+        private void dgvSlot_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvSlot.Rows.Count)
+            {
+                DataGridViewRow row = dgvSlot.Rows[e.RowIndex];
+                rtxtContent.Clear();
+                LoadStudyMaterialList(Convert.ToInt32(row.Cells[0].Value.ToString()));
+            }
+        }
     }
 }
