@@ -16,7 +16,7 @@ namespace Repositories
 
         List<StudyMaterial> IStudyMaterialRepository.GetStudyMaterials() => StudyMaterialDAO.Instance.GetStudyMaterials();
 
-        List<StudyMaterial> IStudyMaterialRepository.GetStudyMaterialsByID(int ID) => StudyMaterialDAO.Instance.GetStudyMaterialsByID(ID);
+        IEnumerable<StudyMaterial> IStudyMaterialRepository.GetStudyMaterialsByID(int ID) => StudyMaterialDAO.Instance.GetStudyMaterialsByID(ID);
 
         void IStudyMaterialRepository.UpdateStudyMaterial(StudyMaterial studyMaterial) => StudyMaterialDAO.Instance.UpdateStudyMaterial(studyMaterial);
     }

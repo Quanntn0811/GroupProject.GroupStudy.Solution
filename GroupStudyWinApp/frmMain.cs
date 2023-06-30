@@ -91,9 +91,9 @@ namespace GroupStudyWinApp
             f.Show();
         }
 
-        private void yourGroupToolStripMenuItem_Click(object sender, EventArgs e)
+        private void myGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmYourGroup f = new frmYourGroup
+            frmMyGroup f = new frmMyGroup
             {
                 CurrentUser = this.CurrentUser,
             };
