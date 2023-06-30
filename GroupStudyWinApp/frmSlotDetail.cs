@@ -78,7 +78,7 @@ namespace GroupStudyWinApp
             txtGroupId.Text = SlotInfo.GroupId.ToString();
             txtSlotIndex.Text = SlotInfo.SlotIndex;
             txtSlotName.Text = SlotInfo.SlotName;
-            ckStatus.Checked = SlotInfo.Status.HasValue ? SlotInfo.Status.Value : false;
+            ckStatus.Checked = SlotInfo.Status == true ? true : false;
         }
     }
 }

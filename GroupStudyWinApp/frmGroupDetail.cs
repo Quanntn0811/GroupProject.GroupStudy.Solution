@@ -86,7 +86,7 @@ namespace GroupStudyWinApp
                 cbSubjectID.Hide();
             }
             txtSize.Text = GroupInfo.Size.ToString();
-            ckStatus.Checked = GroupInfo.Status.HasValue ? GroupInfo.Status.Value : false;
+            ckStatus.Checked = GroupInfo.Status == true ? true : false;
         }
 
         public void LoadSubjectId()
