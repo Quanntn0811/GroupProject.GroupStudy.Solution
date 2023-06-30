@@ -32,9 +32,8 @@
             lbxComment = new ListBox();
             txtComment = new TextBox();
             btnComment = new Button();
-            btnStudy = new Button();
             btnClose = new Button();
-            txtSlotId = new TextBox();
+            rtxtContent = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvSlot).BeginInit();
             SuspendLayout();
             // 
@@ -45,30 +44,32 @@
             dgvSlot.Name = "dgvSlot";
             dgvSlot.RowHeadersWidth = 51;
             dgvSlot.RowTemplate.Height = 29;
-            dgvSlot.Size = new Size(764, 175);
+            dgvSlot.Size = new Size(380, 213);
             dgvSlot.TabIndex = 0;
+            dgvSlot.CellDoubleClick += dgvSlot_CellDoubleClick;
+            dgvSlot.CellMouseClick += dgvSlot_CellMouseClick;
             // 
             // lbxComment
             // 
             lbxComment.BorderStyle = BorderStyle.None;
             lbxComment.FormattingEnabled = true;
             lbxComment.ItemHeight = 20;
-            lbxComment.Location = new Point(12, 212);
+            lbxComment.Location = new Point(12, 255);
             lbxComment.Name = "lbxComment";
             lbxComment.RightToLeft = RightToLeft.No;
-            lbxComment.Size = new Size(380, 180);
+            lbxComment.Size = new Size(380, 200);
             lbxComment.TabIndex = 1;
             // 
             // txtComment
             // 
-            txtComment.Location = new Point(12, 409);
+            txtComment.Location = new Point(12, 474);
             txtComment.Name = "txtComment";
             txtComment.Size = new Size(270, 27);
             txtComment.TabIndex = 2;
             // 
             // btnComment
             // 
-            btnComment.Location = new Point(298, 409);
+            btnComment.Location = new Point(298, 474);
             btnComment.Name = "btnComment";
             btnComment.Size = new Size(94, 29);
             btnComment.TabIndex = 3;
@@ -76,19 +77,9 @@
             btnComment.UseVisualStyleBackColor = true;
             btnComment.Click += btnComment_Click;
             // 
-            // btnStudy
-            // 
-            btnStudy.Location = new Point(556, 212);
-            btnStudy.Name = "btnStudy";
-            btnStudy.Size = new Size(94, 29);
-            btnStudy.TabIndex = 4;
-            btnStudy.Text = "Study";
-            btnStudy.UseVisualStyleBackColor = true;
-            btnStudy.Click += btnStudy_Click;
-            // 
             // btnClose
             // 
-            btnClose.Location = new Point(682, 212);
+            btnClose.Location = new Point(1038, 525);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 5;
@@ -96,21 +87,21 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
-            // txtSlotId
+            // rtxtContent
             // 
-            txtSlotId.Location = new Point(766, 409);
-            txtSlotId.Name = "txtSlotId";
-            txtSlotId.Size = new Size(10, 27);
-            txtSlotId.TabIndex = 6;
+            rtxtContent.Location = new Point(435, 12);
+            rtxtContent.Name = "rtxtContent";
+            rtxtContent.Size = new Size(697, 491);
+            rtxtContent.TabIndex = 6;
+            rtxtContent.Text = "";
             // 
             // frmGroupStudy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(txtSlotId);
+            ClientSize = new Size(1144, 566);
+            Controls.Add(rtxtContent);
             Controls.Add(btnClose);
-            Controls.Add(btnStudy);
             Controls.Add(btnComment);
             Controls.Add(txtComment);
             Controls.Add(lbxComment);
@@ -130,8 +121,7 @@
         private ListBox lbxComment;
         private TextBox txtComment;
         private Button btnComment;
-        private Button btnStudy;
         private Button btnClose;
-        private TextBox txtSlotId;
+        private RichTextBox rtxtContent;
     }
 }

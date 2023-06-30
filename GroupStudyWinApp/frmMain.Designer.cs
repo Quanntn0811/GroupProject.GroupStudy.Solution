@@ -37,7 +37,7 @@
             logoutToolStripMenuItem = new ToolStripMenuItem();
             groupToolStripMenuItem = new ToolStripMenuItem();
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
-            yourGroupToolStripMenuItem = new ToolStripMenuItem();
+            myGroupToolStripMenuItem = new ToolStripMenuItem();
             profileToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -98,7 +98,7 @@
             // 
             // groupToolStripMenuItem
             // 
-            groupToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { joinGroupToolStripMenuItem, yourGroupToolStripMenuItem });
+            groupToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { joinGroupToolStripMenuItem, myGroupToolStripMenuItem });
             groupToolStripMenuItem.Name = "groupToolStripMenuItem";
             groupToolStripMenuItem.Size = new Size(64, 24);
             groupToolStripMenuItem.Text = "Group";
@@ -110,12 +110,12 @@
             joinGroupToolStripMenuItem.Text = "Join Group";
             joinGroupToolStripMenuItem.Click += joinGroupToolStripMenuItem_Click;
             // 
-            // yourGroupToolStripMenuItem
+            // myGroupToolStripMenuItem
             // 
-            yourGroupToolStripMenuItem.Name = "yourGroupToolStripMenuItem";
-            yourGroupToolStripMenuItem.Size = new Size(224, 26);
-            yourGroupToolStripMenuItem.Text = "Your Group";
-            yourGroupToolStripMenuItem.Click += yourGroupToolStripMenuItem_Click;
+            myGroupToolStripMenuItem.Name = "myGroupToolStripMenuItem";
+            myGroupToolStripMenuItem.Size = new Size(224, 26);
+            myGroupToolStripMenuItem.Text = "My Group";
+            myGroupToolStripMenuItem.Click += myGroupToolStripMenuItem_Click;
             // 
             // profileToolStripMenuItem
             // 
@@ -154,6 +154,6 @@
         private ToolStripMenuItem manageUserToolStripMenuItem;
         private ToolStripMenuItem groupToolStripMenuItem;
         private ToolStripMenuItem joinGroupToolStripMenuItem;
-        private ToolStripMenuItem yourGroupToolStripMenuItem;
+        private ToolStripMenuItem myGroupToolStripMenuItem;
     }
 }

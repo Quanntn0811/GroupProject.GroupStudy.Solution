@@ -10,7 +10,7 @@ namespace Repositories
     public interface IStudyMaterialRepository
     {
         List<StudyMaterial> GetStudyMaterials();
-        List<StudyMaterial> GetStudyMaterialsByID(int ID);
+        IEnumerable<StudyMaterial> GetStudyMaterialsByID(int ID);
         void AddStudyMaterial(StudyMaterial studyMaterial);
         void UpdateStudyMaterial(StudyMaterial studyMaterial);
         void DeleteStudyMaterialByID(int ID);
