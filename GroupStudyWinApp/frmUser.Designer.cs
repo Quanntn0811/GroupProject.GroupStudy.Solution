@@ -30,7 +30,6 @@
         {
             btnClose = new Button();
             btnDelete = new Button();
-            btnLoad = new Button();
             dgvUserList = new DataGridView();
             txtEmail = new TextBox();
             txtUsername = new TextBox();
@@ -53,7 +52,7 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(694, 409);
+            btnClose.Location = new Point(694, 385);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(94, 29);
             btnClose.TabIndex = 23;
@@ -63,23 +62,13 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(694, 362);
+            btnDelete.Location = new Point(694, 338);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 22;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
-            // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(694, 267);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 20;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
             // 
             // dgvUserList
             // 
@@ -228,7 +217,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(694, 314);
+            btnUpdate.Location = new Point(694, 290);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 37;
@@ -252,7 +241,6 @@
             Controls.Add(label5);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
-            Controls.Add(btnLoad);
             Controls.Add(dgvUserList);
             Controls.Add(txtEmail);
             Controls.Add(txtUsername);
@@ -273,7 +261,6 @@
 
         private Button btnClose;
         private Button btnDelete;
-        private Button btnLoad;
         private DataGridView dgvUserList;
         private TextBox txtEmail;
         private TextBox txtUsername;

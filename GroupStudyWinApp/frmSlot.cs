@@ -24,11 +24,6 @@ namespace GroupStudyWinApp
 
         private void frmSlot_Load(object sender, EventArgs e)
         {
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
-        }
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
             LoadSlotList();
         }
         private void LoadSlotList()
@@ -57,12 +52,7 @@ namespace GroupStudyWinApp
                 dgvSlotList.Columns[5].Visible = false;
                 dgvSlotList.Columns[6].Visible = false;
 
-                if (list.Count() != 0)
-                {
-                    btnDelete.Enabled = true;
-                    btnUpdate.Enabled = true;
-                }
-                else
+                if (list.Count() == 0)
                 {
                     btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;

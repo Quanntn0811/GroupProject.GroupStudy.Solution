@@ -1,5 +1,5 @@
 
-﻿using BusinessObjects.EntityModels;
+using BusinessObjects.EntityModels;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -53,6 +53,11 @@ namespace GroupStudyWinApp
 
                 dgvUserInGroup.DataSource = null;
                 dgvUserInGroup.DataSource = source;
+
+                dgvUserInGroup.Columns[7].Visible = false;
+                dgvUserInGroup.Columns[8].Visible = false;
+                dgvUserInGroup.Columns[9].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -84,6 +89,7 @@ namespace GroupStudyWinApp
                         GroupId = GroupId
                     };
                     participantRepository.DeleteParticipant(participant);
+                    LoadUserList();
                 }
 
             }

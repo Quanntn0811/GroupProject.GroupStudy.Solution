@@ -36,7 +36,6 @@
             lbSize = new Label();
             btnClose = new Button();
             btnDelete = new Button();
-            btnLoad = new Button();
             txtGroupID = new TextBox();
             txtSubjectID = new TextBox();
             txtSize = new TextBox();
@@ -116,23 +115,13 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(601, 356);
+            btnDelete.Location = new Point(602, 343);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 101;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
-            // 
-            // btnLoad
-            // 
-            btnLoad.Location = new Point(601, 214);
-            btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
-            btnLoad.TabIndex = 100;
-            btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
-            btnLoad.Click += btnLoad_Click;
             // 
             // txtGroupID
             // 
@@ -173,7 +162,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(601, 262);
+            btnAdd.Location = new Point(601, 214);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 107;
@@ -183,7 +172,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(601, 311);
+            btnUpdate.Location = new Point(602, 278);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 108;
@@ -217,7 +206,6 @@
             Controls.Add(txtGroupID);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
-            Controls.Add(btnLoad);
             Controls.Add(lbStatus);
             Controls.Add(lbSize);
             Controls.Add(dgvGroupList);
@@ -243,7 +231,6 @@
         private Button btnSort;
         private Button btnClose;
         private Button btnDelete;
-        private Button btnLoad;
         private TextBox txtGroupID;
         private TextBox txtSubjectID;
         private TextBox txtSize;
