@@ -1,5 +1,6 @@
 ﻿using BusinessObjects.DBContext;
 using BusinessObjects.EntityModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,25 @@ namespace DataAccessObjects
             }
         }
         //---------------------------------------
+        // Get list progress of user in a group
+        public List<Progress> GetProgressesByUserInGroup(int userId, int groupId)
+        {
+            var list = _context.Progresses.Where(x => x.UserId == userId).Include(x => x.Slot).ToList();
+            List<Progress> newList = new List<Progress>();  
+            foreach (var item in list)
+            {
+                if (item.Slot.GroupId == groupId)
+                {
+                    newList.Add(item);
+                }
+            }
 
-        public Progress GetProgress(int userId, int slotId) => _context.Progresses.SingleOrDefault(x => x.SlotId == slotId && x.UserId == userId);
+            return newList;
+        }
+
+        // Get Progress 
+        public Progress GetProgress(int userId, int slotId) 
+            => _context.Progresses.SingleOrDefault(x => x.SlotId == slotId && x.UserId == userId);
 
         public bool IsProgressExists(int userId, int slotId)
         {
@@ -94,6 +112,7 @@ namespace DataAccessObjects
                 throw new Exception("Progress does not exist.");
             }
         }
+
         //-----------------------------------------
     }
 }

@@ -9,6 +9,7 @@ namespace Repositories
 {
     public interface IProgressRepository
     {
+        List<Progress> GetProgressesByUserInGroup(int userId, int groupId);
         void AddRange(int userId, List<Slot> slots);
         Progress GetProgress(int userId, int slotId);
         void Update(Progress progress);
