@@ -104,8 +104,11 @@ namespace GroupStudyWinApp
             repoParticipant.UpdateParticipant(userID, groupID, 1);
             // Add progress for user
             var list = slotRepo.GetSlotsByGroupId(groupID).ToList();
-            progressRepo.AddRange(userID, list);
+            var listProgress = progressRepo.GetProgressesByUserInGroup(userID, groupID);
+            // if user havent joined this group before, add progress
+            if (listProgress.Count == 0) progressRepo.AddRange(userID, list);
             
+
             LoadParticipantPending(groupID, 0);
             LoadParticipantAccepted(groupID, 0);
         }
