@@ -23,6 +23,8 @@ public partial class GroupStudyContext : DbContext
 
     public virtual DbSet<Participant> Participants { get; set; }
 
+    public virtual DbSet<Progress> Progresses { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<Slot> Slots { get; set; }
@@ -40,8 +42,9 @@ public partial class GroupStudyContext : DbContext
     private string GetConnectionString()
     {
         IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true).Build();
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true).Build();
+
         return configuration["ConnectionStrings:DefaultConnectionString"];
     }
 
@@ -70,6 +73,13 @@ public partial class GroupStudyContext : DbContext
             entity.HasOne(d => d.Group).WithMany(p => p.Participants).HasConstraintName("FK_Participant_Group");
 
             entity.HasOne(d => d.User).WithMany(p => p.Participants).HasConstraintName("FK_Participant_User");
+        });
+
+        modelBuilder.Entity<Progress>(entity =>
+        {
+            entity.HasOne(d => d.Slot).WithMany(p => p.Progresses).HasConstraintName("FK_Progress_Slot");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Progresses).HasConstraintName("FK_Progress_User");
         });
 
         modelBuilder.Entity<Slot>(entity =>

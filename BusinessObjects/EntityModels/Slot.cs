@@ -34,5 +34,8 @@ public partial class Slot
     public virtual Group? Group { get; set; }
 
     [InverseProperty("Slot")]
+    public virtual ICollection<Progress> Progresses { get; set; } = new List<Progress>();
+
+    [InverseProperty("Slot")]
     public virtual ICollection<StudyMaterial> StudyMaterials { get; set; } = new List<StudyMaterial>();
 }

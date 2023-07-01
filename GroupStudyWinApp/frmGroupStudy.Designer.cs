@@ -34,6 +34,8 @@
             btnComment = new Button();
             btnClose = new Button();
             rtxtContent = new RichTextBox();
+            btnSubmit = new Button();
+            cbFinish = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)dgvSlot).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +49,6 @@
             dgvSlot.Size = new Size(380, 213);
             dgvSlot.TabIndex = 0;
             dgvSlot.CellDoubleClick += dgvSlot_CellDoubleClick;
-            dgvSlot.CellMouseClick += dgvSlot_CellMouseClick;
             // 
             // lbxComment
             // 
@@ -95,11 +96,33 @@
             rtxtContent.TabIndex = 6;
             rtxtContent.Text = "";
             // 
+            // btnSubmit
+            // 
+            btnSubmit.Location = new Point(572, 525);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(94, 29);
+            btnSubmit.TabIndex = 7;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
+            // 
+            // cbFinish
+            // 
+            cbFinish.AutoSize = true;
+            cbFinish.Location = new Point(435, 528);
+            cbFinish.Name = "cbFinish";
+            cbFinish.Size = new Size(117, 24);
+            cbFinish.TabIndex = 9;
+            cbFinish.Text = "Finish lession";
+            cbFinish.UseVisualStyleBackColor = true;
+            // 
             // frmGroupStudy
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1144, 566);
+            Controls.Add(cbFinish);
+            Controls.Add(btnSubmit);
             Controls.Add(rtxtContent);
             Controls.Add(btnClose);
             Controls.Add(btnComment);
@@ -123,5 +146,7 @@
         private Button btnComment;
         private Button btnClose;
         private RichTextBox rtxtContent;
+        private Button btnSubmit;
+        private CheckBox cbFinish;
     }
 }

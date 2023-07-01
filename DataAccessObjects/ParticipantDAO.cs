@@ -83,7 +83,7 @@ namespace DataAccessObjects
         //  Get group by userId
         public List<Group> GetListByUserId(int userId)
         {
-            var list = _context.Participants.Where(x => x.UserId == userId).Select(x => x.Group).ToList(); 
+            var list = _context.Participants.Where(x => x.UserId == userId && x.Status == 1).Select(x => x.Group).ToList(); 
             return list;
         }
         // Get list participant Peding by GroupID

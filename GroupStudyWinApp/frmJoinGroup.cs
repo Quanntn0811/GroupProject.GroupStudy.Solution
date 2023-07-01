@@ -139,6 +139,7 @@ namespace GroupStudyWinApp
             {
                 UserId = CurrentUser.UserId,
                 GroupId = Convert.ToInt32(txtGroupID.Text),
+                Status = 0,
             };
 
             repoParticipant.AddParticipant(participant);

@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.EntityModels;
+using Microsoft.IdentityModel.Tokens;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -29,8 +30,12 @@ namespace GroupStudyWinApp
         private void frmYourGroup_Load(object sender, EventArgs e)
         {
             LoadGroupList();
-            int joined = participantRepo.NumberStudentInGroup(Convert.ToInt32(txtGroupId.Text));
-            txtJoined.Text = joined.ToString();
+            if (!txtGroupId.Text.IsNullOrEmpty())
+            {
+                int joined = participantRepo.NumberStudentInGroup(Convert.ToInt32(txtGroupId.Text));
+                txtJoined.Text = joined.ToString();
+            }
+
         }
         //---------------------------------------------------
         public void ClearText()
@@ -39,6 +44,7 @@ namespace GroupStudyWinApp
             txtSize.Text = string.Empty;
             txtStatus.Text = string.Empty;
             txtSubjectId.Text = string.Empty;
+            txtJoined.Text = string.Empty;  
         }
 
         public void LoadGroupList()
@@ -70,6 +76,7 @@ namespace GroupStudyWinApp
                 if (list.Count() == 0)
                 {
                     ClearText();
+                    txtJoined.Text = string.Empty;
                     btnOut.Enabled = false;
                 }
                 else btnOut.Enabled = true;
