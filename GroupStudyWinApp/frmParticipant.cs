@@ -17,6 +17,18 @@ namespace GroupStudyWinApp
     {
         IParticipantRepository repoParticipant = new ParticipantRepository();
         IGroupRepository repoGroup = new GroupRepository();
+        ISlotRepository slotRepo = new SlotRepository();
+        IProgressRepository progressRepo = new ProgressRepository();
+        //-------------------------------------------------
+        public frmParticipant()
+        {
+            InitializeComponent();
+        }
+
+        private void frmParticipant_Load(object sender, EventArgs e)
+        {
+            LoadGroup();
+        }
         //-------------------------------------------------
         private void LoadGroup()
         {
@@ -69,16 +81,6 @@ namespace GroupStudyWinApp
             }
         }
         //-------------------------------------------------
-        public frmParticipant()
-        {
-            InitializeComponent();
-        }
-
-
-        private void frmParticipant_Load(object sender, EventArgs e)
-        {
-            LoadGroup();
-        }
 
         private void dgvGroup_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -100,6 +102,10 @@ namespace GroupStudyWinApp
             int userID = Convert.ToInt32(dgvPending.CurrentRow.Cells[0].Value);
             int groupID = Convert.ToInt32(dgvPending.CurrentRow.Cells[1].Value);
             repoParticipant.UpdateParticipant(userID, groupID, 1);
+            // Add progress for user
+            var list = slotRepo.GetSlotsByGroupId(groupID).ToList();
+            progressRepo.AddRange(userID, list);
+            
             LoadParticipantPending(groupID, 0);
             LoadParticipantAccepted(groupID, 0);
         }

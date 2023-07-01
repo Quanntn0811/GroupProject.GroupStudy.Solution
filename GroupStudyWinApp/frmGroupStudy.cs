@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace GroupStudyWinApp
 {
@@ -18,6 +19,8 @@ namespace GroupStudyWinApp
         ICommentRepository commentRepo = new CommentRepository();
         ISlotRepository slotRepo = new SlotRepository();
         IStudyMaterialRepository studyMRepo = new StudyMaterialRepository();
+        IProgressRepository progressRepo = new ProgressRepository();
+        int index = 0;
         BindingSource source = new BindingSource();
         //-----------------------------------------
         public frmGroupStudy()
@@ -26,14 +29,13 @@ namespace GroupStudyWinApp
         }
         public Group CurrentGroup { get; set; }
         public User CurrentUser { get; set; }
-        public Slot SlotObject { get; set; }
+        public Slot CurrentSlot { get; set; }
         //-----------------------------------------
         private void frmGroupStudy_Load(object sender, EventArgs e)
         {
             LoadCommentList();
             LoadSlotList();
             lbxComment.HorizontalScrollbar = true;
-            dgvSlot.CellDoubleClick += dgvSlot_CellDoubleClick;
         }
 
         //-----------------------------------------
@@ -41,10 +43,21 @@ namespace GroupStudyWinApp
         {
             var list = studyMRepo.GetStudyMaterialsByID(slotId);
             int i = 1;
-            foreach (var item in list)
+
+            var progress = progressRepo.GetProgress(CurrentUser.UserId, slotId);
+            // Check if user passed progress
+            if (progress.Status == true)
             {
-                rtxtContent.AppendText($"{i++}. " + item.Title + "\n", Color.Black);
-                rtxtContent.AppendText(item.Content + "\n\n");
+                // Print study materials in slot
+                foreach (var item in list)
+                {
+                    rtxtContent.AppendText($"{i++}. " + item.Title + "\n", Color.Black);
+                    rtxtContent.AppendText(item.Content + "\n\n");
+                }
+            }
+            else
+            {
+                MessageBox.Show("you must finish the previous lession", "Notification");
             }
         }
 
@@ -127,11 +140,6 @@ namespace GroupStudyWinApp
             }
         }
 
-        private void dgvSlot_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-        }
-
         private void dgvSlot_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < dgvSlot.Rows.Count)
@@ -139,6 +147,31 @@ namespace GroupStudyWinApp
                 DataGridViewRow row = dgvSlot.Rows[e.RowIndex];
                 rtxtContent.Clear();
                 LoadStudyMaterialList(Convert.ToInt32(row.Cells[0].Value.ToString()));
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (cbFinish.Checked)
+            {
+                var slots = slotRepo.GetSlotsByGroupId(CurrentGroup.GroupId).ToList();
+
+                try
+                {
+                    Progress progress = new Progress
+                    {
+                        UserId = CurrentUser.UserId,
+                        SlotId = slots[++index].SlotId,
+                        Status = true,
+                    };
+                    progressRepo.Update(progress);
+                    MessageBox.Show("Submit successfully", "Notification");
+                    cbFinish.Checked = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error");
+                }
             }
         }
     }

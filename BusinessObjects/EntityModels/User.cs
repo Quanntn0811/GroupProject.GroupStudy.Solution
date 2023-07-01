@@ -45,6 +45,9 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
 
+    [InverseProperty("User")]
+    public virtual ICollection<Progress> Progresses { get; set; } = new List<Progress>();
+
     [ForeignKey("RoleId")]
     [InverseProperty("Users")]
     public virtual Role? Role { get; set; }
