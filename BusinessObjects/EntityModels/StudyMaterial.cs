@@ -30,7 +30,7 @@ public partial class StudyMaterial
     public string? Link { get; set; }
 
     [Column("status")]
-    public bool? Status { get; set; }
+    public bool Status { get; set; }
 
     [ForeignKey("SlotId")]
     [InverseProperty("StudyMaterials")]

@@ -23,5 +23,11 @@ namespace Repositories
         List<User> IParticipantRepository.GetListUserInGroup(int groupID) => ParticipantDAO.Instance.GetListUserInGroup(groupID);
 
         public List<Group> GetListByUserId(int userId) => ParticipantDAO.Instance.GetListByUserId(userId);
+
+        List<Participant> IParticipantRepository.GetParticipantsInGroupPending(int groupID, int status) => ParticipantDAO.Instance.GetParticipantsInGroupPeding(groupID, status);
+
+        List<Participant> IParticipantRepository.GetParticipantsInGroupAccepted(int groupID, int status) => ParticipantDAO.Instance.GetParticipantsInGroupAccepted(groupID, status);
+
+        void IParticipantRepository.UpdateParticipant(int userID, int groupID, int status) => ParticipantDAO.Instance.UpdateParticipant(userID, groupID, status);
     }
 }

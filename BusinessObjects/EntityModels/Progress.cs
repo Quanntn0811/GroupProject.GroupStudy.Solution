@@ -6,26 +6,26 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BusinessObjects.EntityModels;
 
-[PrimaryKey("UserId", "GroupId")]
-[Table("Participant")]
-public partial class Participant
+[PrimaryKey("UserId", "SlotId")]
+[Table("Progress")]
+public partial class Progress
 {
     [Key]
     [Column("userId")]
     public int UserId { get; set; }
 
     [Key]
-    [Column("groupId")]
-    public int GroupId { get; set; }
+    [Column("slotId")]
+    public int SlotId { get; set; }
 
     [Column("status")]
-    public int Status { get; set; }
+    public bool Status { get; set; }
 
-    [ForeignKey("GroupId")]
-    [InverseProperty("Participants")]
-    public virtual Group Group { get; set; } = null!;
+    [ForeignKey("SlotId")]
+    [InverseProperty("Progresses")]
+    public virtual Slot Slot { get; set; } = null!;
 
     [ForeignKey("UserId")]
-    [InverseProperty("Participants")]
+    [InverseProperty("Progresses")]
     public virtual User User { get; set; } = null!;
 }

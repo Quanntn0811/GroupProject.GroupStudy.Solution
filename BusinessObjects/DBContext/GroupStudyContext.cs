@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using BusinessObjects.EntityModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace BusinessObjects.DBContext;
 
@@ -22,6 +23,8 @@ public partial class GroupStudyContext : DbContext
 
     public virtual DbSet<Participant> Participants { get; set; }
 
+    public virtual DbSet<Progress> Progresses { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<Slot> Slots { get; set; }
@@ -34,7 +37,16 @@ public partial class GroupStudyContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=(local);database=GroupStudyTest;uid=sa;pwd=123456789;Trustservercertificate=true");
+        => optionsBuilder.UseSqlServer(GetConnectionString());
+
+    private string GetConnectionString()
+    {
+        IConfiguration configuration = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", true, true).Build();
+
+        return configuration["ConnectionStrings:DefaultConnectionString"];
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -61,6 +73,13 @@ public partial class GroupStudyContext : DbContext
             entity.HasOne(d => d.Group).WithMany(p => p.Participants).HasConstraintName("FK_Participant_Group");
 
             entity.HasOne(d => d.User).WithMany(p => p.Participants).HasConstraintName("FK_Participant_User");
+        });
+
+        modelBuilder.Entity<Progress>(entity =>
+        {
+            entity.HasOne(d => d.Slot).WithMany(p => p.Progresses).HasConstraintName("FK_Progress_Slot");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Progresses).HasConstraintName("FK_Progress_User");
         });
 
         modelBuilder.Entity<Slot>(entity =>
