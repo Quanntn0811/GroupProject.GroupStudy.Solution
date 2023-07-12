@@ -1,3 +1,4 @@
+using BusinessObjects.EntityModels;
 using Repositories;
 
 namespace GroupStudyWinApp
@@ -60,6 +61,7 @@ namespace GroupStudyWinApp
             }
         }
 
+
         // Register account
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -74,6 +76,38 @@ namespace GroupStudyWinApp
             txtEmail.Text = "admin@gmail.com";
             txtPassword.Text = "1";
         }
+
+        // Check empty input
+        public static bool IsEmptyInput(string email, string pwd)
+        {
+			bool isEmailValid = email == "" ? false : true;
+			bool isPwdValid = pwd == "" ? false : true;
+
+			if (!isEmailValid && !isPwdValid) return false;
+			else if (isPwdValid && !isEmailValid) return false;
+			else if (isEmailValid && !isPwdValid) return false;
+            else return true;
+		}
+
+        // Check user exist
+        public static bool IsUserExist(string email, string pwd)
+        {
+			IUserRepository repo = new UserRepository();
+			var cus = repo.GetUsers().FirstOrDefault(x => x.Email == email && x.Password == pwd);
+
+            if (cus == null) return false;
+            else return true;
+		}
+        
+        // Check is authorized user
+        public static bool IsAdminOrUser(string email, string pwd)
+        {
+			IUserRepository repo = new UserRepository();
+			var cus = repo.GetUsers().FirstOrDefault(x => x.Email == email && x.Password == pwd);
+
+            if (cus.RoleId == 1) return true;
+            else return false;
+		}
 
     }
 }

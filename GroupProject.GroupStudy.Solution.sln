@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessObjects", "DataAc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{EA680BE8-04BC-4445-85E1-647209D74022}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupStudyWinApp", "GroupStudyWinApp\GroupStudyWinApp.csproj", "{03C5A58B-441A-4971-934D-567FB26C0D51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupStudyWinApp", "GroupStudyWinApp\GroupStudyWinApp.csproj", "{03C5A58B-441A-4971-934D-567FB26C0D51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupProject.GroupStudy.NUnitTest", "GroupProject.GroupStudy.NUnitTest\GroupProject.GroupStudy.NUnitTest.csproj", "{AF05FCEF-FA31-4398-A551-2E41F6CFC470}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{03C5A58B-441A-4971-934D-567FB26C0D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C5A58B-441A-4971-934D-567FB26C0D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C5A58B-441A-4971-934D-567FB26C0D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF05FCEF-FA31-4398-A551-2E41F6CFC470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF05FCEF-FA31-4398-A551-2E41F6CFC470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF05FCEF-FA31-4398-A551-2E41F6CFC470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF05FCEF-FA31-4398-A551-2E41F6CFC470}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
