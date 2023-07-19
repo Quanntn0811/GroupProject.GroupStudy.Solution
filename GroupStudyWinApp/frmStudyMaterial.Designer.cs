@@ -39,7 +39,7 @@
             btnDelete = new Button();
             lbStatus = new Label();
             lbTitle = new Label();
-            dgvGroupList = new DataGridView();
+            dgvStudyMaterial = new DataGridView();
             lbSlotID = new Label();
             lbStudyMaterialID = new Label();
             lbfrmStudyMaterial = new Label();
@@ -47,7 +47,7 @@
             lbLink = new Label();
             txtContent = new TextBox();
             lbContent = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvGroupList).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStudyMaterial).BeginInit();
             SuspendLayout();
             // 
             // txtSearch
@@ -157,15 +157,15 @@
             lbTitle.TabIndex = 114;
             lbTitle.Text = "Title";
             // 
-            // dgvGroupList
+            // dgvStudyMaterial
             // 
-            dgvGroupList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGroupList.Location = new Point(31, 247);
-            dgvGroupList.Name = "dgvGroupList";
-            dgvGroupList.RowHeadersWidth = 51;
-            dgvGroupList.RowTemplate.Height = 29;
-            dgvGroupList.Size = new Size(576, 217);
-            dgvGroupList.TabIndex = 113;
+            dgvStudyMaterial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStudyMaterial.Location = new Point(31, 247);
+            dgvStudyMaterial.Name = "dgvStudyMaterial";
+            dgvStudyMaterial.RowHeadersWidth = 51;
+            dgvStudyMaterial.RowTemplate.Height = 29;
+            dgvStudyMaterial.Size = new Size(576, 217);
+            dgvStudyMaterial.TabIndex = 113;
             // 
             // lbSlotID
             // 
@@ -251,14 +251,14 @@
             Controls.Add(btnDelete);
             Controls.Add(lbStatus);
             Controls.Add(lbTitle);
-            Controls.Add(dgvGroupList);
+            Controls.Add(dgvStudyMaterial);
             Controls.Add(lbSlotID);
             Controls.Add(lbStudyMaterialID);
             Controls.Add(lbfrmStudyMaterial);
             Name = "frmStudyMaterial";
             Text = "frmStudyMaterial";
             Load += frmStudyMaterial_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvGroupList).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStudyMaterial).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,7 +276,7 @@
         private Button btnDelete;
         private Label lbStatus;
         private Label lbTitle;
-        private DataGridView dgvGroupList;
+        private DataGridView dgvStudyMaterial;
         private Label lbSlotID;
         private Label lbStudyMaterialID;
         private Label lbfrmStudyMaterial;

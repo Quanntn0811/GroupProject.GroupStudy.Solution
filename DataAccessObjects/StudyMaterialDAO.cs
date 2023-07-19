@@ -65,6 +65,7 @@ namespace DataAccessObjects
             if (check != null)
             {
                 _context.StudyMaterials.Remove(check);
+                _context.SaveChanges();
             } else
             {
                 throw new Exception("Can not delete Study Material");

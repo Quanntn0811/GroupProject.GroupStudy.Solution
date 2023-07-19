@@ -39,15 +39,12 @@
             lbStatus = new Label();
             lbTitle = new Label();
             lbSlot = new Label();
-            lbStudyMaterialID = new Label();
             cbSlot = new ComboBox();
-            nupStudyMaterialID = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)nupStudyMaterialID).BeginInit();
             SuspendLayout();
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(257, 323);
+            btnCancel.Location = new Point(244, 273);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 29);
             btnCancel.TabIndex = 119;
@@ -57,7 +54,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(129, 323);
+            btnSave.Location = new Point(116, 273);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 29);
             btnSave.TabIndex = 118;
@@ -68,7 +65,7 @@
             // lbContent
             // 
             lbContent.AutoSize = true;
-            lbContent.Location = new Point(55, 220);
+            lbContent.Location = new Point(42, 170);
             lbContent.Name = "lbContent";
             lbContent.Size = new Size(61, 20);
             lbContent.TabIndex = 140;
@@ -77,7 +74,7 @@
             // txtContent
             // 
             txtContent.BackColor = Color.White;
-            txtContent.Location = new Point(183, 217);
+            txtContent.Location = new Point(170, 167);
             txtContent.Name = "txtContent";
             txtContent.Size = new Size(229, 27);
             txtContent.TabIndex = 139;
@@ -85,7 +82,7 @@
             // lbLink
             // 
             lbLink.AutoSize = true;
-            lbLink.Location = new Point(53, 137);
+            lbLink.Location = new Point(40, 87);
             lbLink.Name = "lbLink";
             lbLink.Size = new Size(35, 20);
             lbLink.TabIndex = 138;
@@ -94,7 +91,7 @@
             // txtLink
             // 
             txtLink.BackColor = Color.White;
-            txtLink.Location = new Point(183, 134);
+            txtLink.Location = new Point(170, 84);
             txtLink.Name = "txtLink";
             txtLink.Size = new Size(229, 27);
             txtLink.TabIndex = 137;
@@ -102,8 +99,7 @@
             // ckStatus
             // 
             ckStatus.AutoSize = true;
-            ckStatus.Enabled = false;
-            ckStatus.Location = new Point(183, 268);
+            ckStatus.Location = new Point(170, 218);
             ckStatus.Name = "ckStatus";
             ckStatus.Size = new Size(18, 17);
             ckStatus.TabIndex = 136;
@@ -112,7 +108,7 @@
             // txtTitle
             // 
             txtTitle.BackColor = Color.White;
-            txtTitle.Location = new Point(183, 176);
+            txtTitle.Location = new Point(170, 126);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(229, 27);
             txtTitle.TabIndex = 135;
@@ -120,7 +116,7 @@
             // lbStatus
             // 
             lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(55, 265);
+            lbStatus.Location = new Point(42, 215);
             lbStatus.Name = "lbStatus";
             lbStatus.Size = new Size(49, 20);
             lbStatus.TabIndex = 132;
@@ -129,7 +125,7 @@
             // lbTitle
             // 
             lbTitle.AutoSize = true;
-            lbTitle.Location = new Point(55, 179);
+            lbTitle.Location = new Point(42, 129);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(38, 20);
             lbTitle.TabIndex = 131;
@@ -138,42 +134,25 @@
             // lbSlot
             // 
             lbSlot.AutoSize = true;
-            lbSlot.Location = new Point(53, 92);
+            lbSlot.Location = new Point(40, 42);
             lbSlot.Name = "lbSlot";
             lbSlot.Size = new Size(35, 20);
             lbSlot.TabIndex = 130;
             lbSlot.Text = "Slot";
             // 
-            // lbStudyMaterialID
-            // 
-            lbStudyMaterialID.AutoSize = true;
-            lbStudyMaterialID.Location = new Point(53, 51);
-            lbStudyMaterialID.Name = "lbStudyMaterialID";
-            lbStudyMaterialID.Size = new Size(116, 20);
-            lbStudyMaterialID.TabIndex = 129;
-            lbStudyMaterialID.Text = "StudyMaterialID";
-            // 
             // cbSlot
             // 
             cbSlot.FormattingEnabled = true;
-            cbSlot.Location = new Point(183, 89);
+            cbSlot.Location = new Point(170, 39);
             cbSlot.Name = "cbSlot";
             cbSlot.Size = new Size(229, 28);
             cbSlot.TabIndex = 141;
-            // 
-            // nupStudyMaterialID
-            // 
-            nupStudyMaterialID.Location = new Point(183, 44);
-            nupStudyMaterialID.Name = "nupStudyMaterialID";
-            nupStudyMaterialID.Size = new Size(229, 27);
-            nupStudyMaterialID.TabIndex = 142;
             // 
             // frmStudyMaterialDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(478, 404);
-            Controls.Add(nupStudyMaterialID);
+            ClientSize = new Size(422, 350);
             Controls.Add(cbSlot);
             Controls.Add(lbContent);
             Controls.Add(txtContent);
@@ -184,13 +163,11 @@
             Controls.Add(lbStatus);
             Controls.Add(lbTitle);
             Controls.Add(lbSlot);
-            Controls.Add(lbStudyMaterialID);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Name = "frmStudyMaterialDetail";
             Text = "frmStudyMaterialDetail";
             Load += frmStudyMaterialDetail_Load;
-            ((System.ComponentModel.ISupportInitialize)nupStudyMaterialID).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,8 +185,6 @@
         private Label lbStatus;
         private Label lbTitle;
         private Label lbSlot;
-        private Label lbStudyMaterialID;
         private ComboBox cbSlot;
-        private NumericUpDown nupStudyMaterialID;
     }
 }

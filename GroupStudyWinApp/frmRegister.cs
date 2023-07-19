@@ -34,6 +34,40 @@ namespace GroupStudyWinApp
             dtpkBirthday.Text = string.Empty;
         }
 
+        private Boolean emailIsExist(string email)
+        {
+            var list = repo.GetUsers();
+            foreach (var user in list)
+            {
+                if (user.Email == email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private string Validate(User user)
+        {
+            if (string.IsNullOrEmpty(user.Username.Trim()))
+            {
+                return "Username is required";
+            }
+            else if (string.IsNullOrEmpty(user.Email.Trim()))
+            {
+                return "Email is required";
+            }
+            else if (string.IsNullOrEmpty(user.Password.Trim()))
+            {
+                return "Password is required";
+            }
+            else if (emailIsExist(user.Email))
+            {
+                return "Email is already exist";
+            }
+            return "";
+        }
+
         private void btnRegister_Click(object sender, EventArgs e)
         {
             bool isPasswordConfirm = txtPassword.Text == txtConfirmPassword.Text ? true : false;
@@ -59,14 +93,21 @@ namespace GroupStudyWinApp
                                 Birthday = Convert.ToDateTime(dtpkBirthday.Text),
                                 RoleId = 2,
                             };
+                            string check = Validate(user);
+                            if(!string.IsNullOrEmpty(check))
+                            {
+                                MessageBox.Show(check);
+                            }
+                            else
+                            {
+                                repo.AddNew(user);
+                                MessageBox.Show("Create successfully", "Notification");
 
-                            repo.AddNew(user);
-                            MessageBox.Show("Create successfully", "Notification");
-
-                            // Open login form
-                            frmLogin f = new frmLogin();
-                            f.Show();
-                            this.Hide();
+                                // Open login form
+                                frmLogin f = new frmLogin();
+                                f.Show();
+                                this.Hide();
+                            }
                         }
                         catch (Exception ex)
                         {
