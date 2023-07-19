@@ -36,11 +36,10 @@ namespace GroupStudyWinApp
             {
                 cbSlot.Text = slot.SlotName;
             }
-            nupStudyMaterialID.Value = StudyMaterialCurrent.StudyMaterialId;
             txtLink.Text = StudyMaterialCurrent.Link;
             txtTitle.Text = StudyMaterialCurrent.Title;
             txtContent.Text = StudyMaterialCurrent.Content;
-            ckStatus.Checked = StudyMaterialCurrent.Status == true ? true:false;
+            ckStatus.Checked = StudyMaterialCurrent.Status == true ? true : false;
         }
 
         public void LoadSubjectId()
@@ -58,6 +57,18 @@ namespace GroupStudyWinApp
             }
         }
 
+        private string Validate(StudyMaterial study)
+        {
+            if (string.IsNullOrEmpty(study.Title.Trim()))
+            {
+                return "Title is required";
+            }
+            else if (string.IsNullOrEmpty(study.Content.Trim()))
+            {
+                return "Content is required";
+            }
+            return "";
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -71,13 +82,10 @@ namespace GroupStudyWinApp
                     Content = txtContent.Text,
                     Status = ckStatus.Checked ? true : false
                 };
-                if (string.IsNullOrEmpty(txtContent.Text))
+                string check = Validate(study);
+                if (!string.IsNullOrEmpty(check))
                 {
-                    MessageBox.Show("Content is required");
-                }
-                else if (string.IsNullOrEmpty(txtTitle.Text))
-                {
-                    MessageBox.Show("Title is required");
+                    MessageBox.Show(check);
                 }
                 else
                 {

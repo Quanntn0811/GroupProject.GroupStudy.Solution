@@ -62,18 +62,25 @@ namespace GroupStudyWinApp
                     Description = txtDescription.Text,
                     Status = status,
                 };
-
-                if (isAdd) // if isAdd == true will show a message to user add successfully
+                string check = Validate(subject);
+                if (!string.IsNullOrEmpty(check))
                 {
-                    repoSubject.AddSubject(subject);
-                    MessageBox.Show("Add subject successfully");
-                    this.Close();
+                    MessageBox.Show(check);
                 }
-                else  // isAdd == false will show a message to user update successfully
+                else
                 {
-                    repoSubject.UpdateSubject(subject);
-                    MessageBox.Show("Update subject successfully");
-                    this.Close();
+                    if (isAdd) // if isAdd == true will show a message to user add successfully
+                    {
+                        repoSubject.AddSubject(subject);
+                        MessageBox.Show("Add subject successfully");
+                        this.Close();
+                    }
+                    else  // isAdd == false will show a message to user update successfully
+                    {
+                        repoSubject.UpdateSubject(subject);
+                        MessageBox.Show("Update subject successfully");
+                        this.Close();
+                    }
                 }
             }
             else
@@ -82,6 +89,23 @@ namespace GroupStudyWinApp
             }
 
         }
+
+        private string Validate(Subject subject)
+        {
+            if (string.IsNullOrEmpty(subject.SubjectId.Trim()))
+            {
+                return "SubjectId is required";
+            }else if (string.IsNullOrEmpty(subject.SubjectName.Trim()))
+            {
+                return "SubjectName is required";
+            }
+            else if (string.IsNullOrEmpty(subject.Description.Trim()))
+            {
+                return "Description is required";
+            }
+            return "";
+        }
+
         // Load form
         private void frmSubjectDetail_Load(object sender, EventArgs e)
         {

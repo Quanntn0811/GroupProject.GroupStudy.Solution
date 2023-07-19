@@ -17,6 +17,7 @@ namespace GroupStudyWinApp
     public partial class frmUserDetail : Form
     {
         IRoleRepository roleRepo = new RoleRepository();
+        IUserRepository userRepo = new UserRepository();
         public event EventHandler DialogOk;
         public frmUserDetail()
         {
@@ -65,6 +66,37 @@ namespace GroupStudyWinApp
             }
         }
 
+        private Boolean emailIsExist(string email)
+        {
+            var list = userRepo.GetUsers();
+            foreach (var user in list)
+            {
+                if (user.Email == email)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private string Validate(User user)
+        {
+            if (string.IsNullOrEmpty(user.Username.Trim()))
+            {
+                return "Username is required";
+            }
+            else if(string.IsNullOrEmpty(user.Email.Trim()))
+            {
+                return "Email is required";
+            }else if (string.IsNullOrEmpty(user.Password.Trim()))
+            {
+                return "Password is required";
+            }else if(emailIsExist(user.Email))
+            {
+                return "Email is already exist";
+            }
+            return "";
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             User user = null;
@@ -96,10 +128,17 @@ namespace GroupStudyWinApp
                                 Birthday = Convert.ToDateTime(dtpkBirthday.Text),
                                 RoleId = role,
                             };
-
-                            Repo.Update(user);
-                            MessageBox.Show("Update successfully", "Notification");
-                            DialogOk?.Invoke(this, EventArgs.Empty);
+                            string check = Validate(user);
+                            if(!string.IsNullOrEmpty(check))
+                            {
+                                MessageBox.Show(check);
+                            }
+                            else
+                            {
+                                Repo.Update(user);
+                                MessageBox.Show("Update successfully", "Notification");
+                                DialogOk?.Invoke(this, EventArgs.Empty);
+                            }
                         }
                         catch (Exception ex)
                         {

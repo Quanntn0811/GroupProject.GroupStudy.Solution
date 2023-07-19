@@ -48,9 +48,10 @@ namespace GroupStudyWinApp
                 txtContent.DataBindings.Add("Text", source, "Content");
                 ckStatus.DataBindings.Add("Checked", source, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
 
-                dgvGroupList.DataSource = null;
-                dgvGroupList.DataSource = source;
+                dgvStudyMaterial.DataSource = null;
+                dgvStudyMaterial.DataSource = source;
 
+                dgvStudyMaterial.Columns[6].Visible = false;
                 if (list.Count() == 0)
                 {
                     btnDelete.Enabled = false;
@@ -84,9 +85,10 @@ namespace GroupStudyWinApp
                 txtContent.DataBindings.Add("Text", source, "Content");
                 ckStatus.DataBindings.Add("Checked", source, "Status", true, DataSourceUpdateMode.OnPropertyChanged);
 
-                dgvGroupList.DataSource = null;
-                dgvGroupList.DataSource = source;
+                dgvStudyMaterial.DataSource = null;
+                dgvStudyMaterial.DataSource = source;
 
+                dgvStudyMaterial.Columns[6].Visible = false;
                 if (list.Count() == 0)
                 {
                     btnDelete.Enabled = false;

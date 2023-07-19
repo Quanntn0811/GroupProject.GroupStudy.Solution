@@ -32,6 +32,14 @@ namespace GroupStudyWinApp
             }
         }
 
+        private string Validate(Group group)
+        {
+            if(group.Size < 5)
+            {
+                return "Size is more than 5";
+            }
+            return "";
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -44,9 +52,10 @@ namespace GroupStudyWinApp
                     Size = int.Parse(txtSize.Text),
                     Status = ckStatus.Checked ? true : false
                 };
-                if (string.IsNullOrEmpty(txtSize.Text))
+                string check = Validate(group);
+                if (!string.IsNullOrEmpty(check))
                 {
-                    MessageBox.Show("Size is required");
+                    MessageBox.Show(check);
                 }
                 else
                 {
