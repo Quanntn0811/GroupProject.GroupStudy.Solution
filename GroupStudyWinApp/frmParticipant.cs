@@ -105,7 +105,7 @@ namespace GroupStudyWinApp
             // Add progress for user
             var list = slotRepo.GetSlotsByGroupId(groupID).ToList();
             var listProgress = progressRepo.GetProgressesByUserInGroup(userID, groupID);
-            // if user havent joined this group before, add progress
+            //ần pif user havent joined this group before, add progress
             if (listProgress.Count == 0) progressRepo.AddRange(userID, list);
             
 
