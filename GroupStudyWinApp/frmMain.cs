@@ -135,5 +135,12 @@ namespace GroupStudyWinApp
             frmParticipant.MdiParent = this;
             frmParticipant.Show();
         }
+
+        private void manageStudyMaterialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStudyMaterial frmStudyMaterial = new frmStudyMaterial();
+            frmStudyMaterial.MdiParent = this;
+            frmStudyMaterial.Show();
+        }
     }
 }

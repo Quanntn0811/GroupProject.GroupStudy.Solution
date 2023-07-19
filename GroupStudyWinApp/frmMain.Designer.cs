@@ -34,13 +34,14 @@
             manageGroupToolStripMenuItem = new ToolStripMenuItem();
             manageUserToolStripMenuItem = new ToolStripMenuItem();
             manageSlotToolStripMenuItem = new ToolStripMenuItem();
+            manageParticipantToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             groupToolStripMenuItem = new ToolStripMenuItem();
             joinGroupToolStripMenuItem = new ToolStripMenuItem();
             myGroupToolStripMenuItem = new ToolStripMenuItem();
             profileToolStripMenuItem = new ToolStripMenuItem();
-            manageParticipantToolStripMenuItem = new ToolStripMenuItem();
+            manageStudyMaterialToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +57,7 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem, manageSlotToolStripMenuItem, manageParticipantToolStripMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manageSubjectToolStripMenuItem, manageGroupToolStripMenuItem, manageUserToolStripMenuItem, manageSlotToolStripMenuItem, manageParticipantToolStripMenuItem, manageStudyMaterialToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -64,30 +65,37 @@
             // manageSubjectToolStripMenuItem
             // 
             manageSubjectToolStripMenuItem.Name = "manageSubjectToolStripMenuItem";
-            manageSubjectToolStripMenuItem.Size = new Size(224, 26);
+            manageSubjectToolStripMenuItem.Size = new Size(246, 26);
             manageSubjectToolStripMenuItem.Text = "Manage Subject";
             manageSubjectToolStripMenuItem.Click += manageSubjectToolStripMenuItem_Click;
             // 
             // manageGroupToolStripMenuItem
             // 
             manageGroupToolStripMenuItem.Name = "manageGroupToolStripMenuItem";
-            manageGroupToolStripMenuItem.Size = new Size(224, 26);
+            manageGroupToolStripMenuItem.Size = new Size(246, 26);
             manageGroupToolStripMenuItem.Text = "Manage Group";
             manageGroupToolStripMenuItem.Click += manageGroupToolStripMenuItem_Click;
             // 
             // manageUserToolStripMenuItem
             // 
             manageUserToolStripMenuItem.Name = "manageUserToolStripMenuItem";
-            manageUserToolStripMenuItem.Size = new Size(224, 26);
+            manageUserToolStripMenuItem.Size = new Size(246, 26);
             manageUserToolStripMenuItem.Text = "Manage User";
             manageUserToolStripMenuItem.Click += manageUserToolStripMenuItem_Click;
             // 
             // manageSlotToolStripMenuItem
             // 
             manageSlotToolStripMenuItem.Name = "manageSlotToolStripMenuItem";
-            manageSlotToolStripMenuItem.Size = new Size(224, 26);
+            manageSlotToolStripMenuItem.Size = new Size(246, 26);
             manageSlotToolStripMenuItem.Text = "Manage Slot";
             manageSlotToolStripMenuItem.Click += manageSlotToolStripMenuItem_Click;
+            // 
+            // manageParticipantToolStripMenuItem
+            // 
+            manageParticipantToolStripMenuItem.Name = "manageParticipantToolStripMenuItem";
+            manageParticipantToolStripMenuItem.Size = new Size(246, 26);
+            manageParticipantToolStripMenuItem.Text = "Manage Participant";
+            manageParticipantToolStripMenuItem.Click += manageParticipantToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -133,12 +141,12 @@
             profileToolStripMenuItem.Text = "Profile";
             profileToolStripMenuItem.Click += profileToolStripMenuItem_Click;
             // 
-            // manageParticipantToolStripMenuItem
+            // manageStudyMaterialToolStripMenuItem
             // 
-            manageParticipantToolStripMenuItem.Name = "manageParticipantToolStripMenuItem";
-            manageParticipantToolStripMenuItem.Size = new Size(224, 26);
-            manageParticipantToolStripMenuItem.Text = "Manage Participant";
-            manageParticipantToolStripMenuItem.Click += manageParticipantToolStripMenuItem_Click;
+            manageStudyMaterialToolStripMenuItem.Name = "manageStudyMaterialToolStripMenuItem";
+            manageStudyMaterialToolStripMenuItem.Size = new Size(246, 26);
+            manageStudyMaterialToolStripMenuItem.Text = "Manage Study Material";
+            manageStudyMaterialToolStripMenuItem.Click += manageStudyMaterialToolStripMenuItem_Click;
             // 
             // frmMain
             // 
@@ -173,5 +181,6 @@
         private ToolStripMenuItem myGroupToolStripMenuItem;
         private ToolStripMenuItem manageSlotToolStripMenuItem;
         private ToolStripMenuItem manageParticipantToolStripMenuItem;
+        private ToolStripMenuItem manageStudyMaterialToolStripMenuItem;
     }
 }
